@@ -17,7 +17,7 @@ type Master struct {
 func NewMaster(context *context.Context) Master {
 	var masterInfo = make(map[string]interface{})
 	var masterConsoleService = pomelo_admin.NewMasterConsoleService(context)
-	var master = Master{masterInfo, context, &masterConsoleService}
+	var master = Master{masterInfo, context, masterConsoleService}
 	return master
 }
 
