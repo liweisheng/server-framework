@@ -24,15 +24,17 @@ type TcpConnector struct {
 	registedEvents map[string]func(args ...interface{})
 }
 
-//创建新的TcpConnector
+/// 创建新的TcpConnector
 func NewTcpConnector(host string, port string, opts map[string]string) *TcpConnector {
 	regE := make(map[string]func(args ...interface{}))
 	return &TcpConnector{host, port, opts, regE}
 }
 
-//处理新接收到的连接.
-//
-//接收tcpSkt上的数据，并解析数据包，调用注册的message事件（函数回调）处理收到的数据
+/// 处理新接收到的连接.
+///
+/// 接收tcpSkt上的数据，并解析数据包，调用注册的message事件（函数回调）处理收到的数据.
+///
+/// @param tcpSkt 与客户端连接的socket.
 func (tc *TcpConnector) HandleNewConnection(tcpSkt *TcpSocket) {
 	const BUFSIZE uint16 = 1024 * 8
 	var buff, recvBuff []byte
@@ -89,8 +91,8 @@ func (tc *TcpConnector) HandleNewConnection(tcpSkt *TcpSocket) {
 	} //end outter for
 }
 
-//监听服务器端口，接收新的连接.对于新来的连接首先调用为其注册的connection事件(函数回调)
-//之后开始监听新的连接.
+/// 监听服务器端口，接收新的连接.对于新来的连接首先调用为其注册的connection事件(函数回调)
+/// 之后开始监听新的连接.
 func (tc *TcpConnector) Start() {
 	tcpAddr, err := net.ResolveTCPAddr("tcp", tc.host+":"+tc.port)
 	context.CheckError(err)
@@ -112,8 +114,33 @@ func (tc *TcpConnector) Start() {
 	}(listener)
 } //end Start()
 
-func (tc *TcpConnector) Decode(buff []byte) (interface{}, error) {
+/// 解码收到的客户端信息.
+///
+/// 客户端的信息应该符合约定好的消息格式，否则解码失败.
+///
+/// @param buff 收到的信息.
+/// @return rst {map[string]string} error 为nil表示解码成功,rst中以name:value形式.
+func (tc *TcpConnector) Decode(buff []byte) (rst interface{}, error) {
 	var result interface{}
 	err := json.Unmarshal(buff, &result)
 	return result, err
+}
+
+
+/// 编码消息,编码成json格式.
+///
+/// @reqID 请求ID
+/// @route 请求路由
+/// @body 消息内容
+/// @return result 第二返回值error为nil的情况下result中存放编码成json后的内容
+func (tc *TcpConnector) Encode(reqID string, route string, body string) (result []byte, error) {
+	msg := make(map[string]interface{})
+	msg["id"] = reqID
+	msg["route"] = route
+	msg["body"] = body
+	msgJson, err := json.Marshal(msg)
+	if err != nil {
+		return nil, err
+	}
+	return msgJson, nil
 }
