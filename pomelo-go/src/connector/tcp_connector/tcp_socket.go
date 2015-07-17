@@ -10,7 +10,8 @@ package tcp_connector
 
 import (
 	"connector"
-	"context"
+	// "context"
+	"log"
 	"net"
 )
 
@@ -26,8 +27,10 @@ func NewTcpSocket(id int32, sock *net.TCPConn) *TcpSocket {
 	remoteAddr := make(map[string]interface{})
 	addr := sock.RemoteAddr()
 	host, port, err := net.SplitHostPort(addr.String())
-	context.CheckError(err)
-
+	// context.CheckError(err)
+	if err != nil {
+		log.Fatal(err.Error())
+	}
 	remoteAddr["host"] = host
 	remoteAddr["port"] = port
 

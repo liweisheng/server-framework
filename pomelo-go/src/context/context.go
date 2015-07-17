@@ -12,23 +12,29 @@ import (
 )
 
 type Context struct {
-	Ch         chan int8
-	Env        string
-	Modules    []module.Module
-	MasterInfo map[string]interface{}
-	ServerInfo map[string][]map[string]interface{}
+	Ch            chan int8
+	Env           string
+	Server        interface{}
+	Modules       []module.Module
+	CurrentServer map[string]interface{}
+	MasterInfo    map[string]interface{}
+	ServerInfo    map[string][]map[string]interface{}
+	AllOpts       map[string]map[string]interface{}
 }
 
 //创建新的上下文
 func NewContext() *Context {
 	ch := make(chan int8)
 	mods := make([]module.Module, 0, 10)
+
+	curS := make(map[string]interface{})
 	masterInfo := make(map[string]interface{})
 	serverInfo := make(map[string][]map[string]interface{})
-	return &Context{ch, "", mods, masterInfo, serverInfo}
+	allOpts := make(map[string]map[string]interface{})
+	return &Context{ch, "", mods, curS, masterInfo, serverInfo, allOpts}
 }
 
-//向上下文中注册一个module
+/// 向上下文中注册一个module.
 func (ctx *Context) RegisteModule(mod module.Module) {
 	ctx.Modules = append(ctx.Modules, mod)
 	fmt.Println(len(ctx.Modules))
@@ -43,4 +49,8 @@ func CheckError(err error) {
 		fmt.Fprintf(os.Stderr, "Fatal Error Exit: %s\n", err.Error())
 		os.Exit(1)
 	}
+}
+
+func (ctx *Context) GetServerID() string {
+	return ctx.CurrentServer["id"].(string)
 }

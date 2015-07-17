@@ -8,9 +8,10 @@ author:liweisheng date:2015/07/08
 package tcp_connector
 
 import (
-	"context"
+	// "context"
 	"encoding/json"
 	"fmt"
+	"log"
 	"net"
 	"os"
 )
@@ -95,16 +96,29 @@ func (tc *TcpConnector) HandleNewConnection(tcpSkt *TcpSocket) {
 /// 之后开始监听新的连接.
 func (tc *TcpConnector) Start() {
 	tcpAddr, err := net.ResolveTCPAddr("tcp", tc.host+":"+tc.port)
-	context.CheckError(err)
-	listener, err := net.ListenTCP("tcp", tcpAddr)
 
+	if err != nil {
+		log.Fatal(err.Error())
+	}
+	// context.CheckError(err)
+	listener, err := net.ListenTCP("tcp", tcpAddr)
+	if err != nil {
+		log.Fatal(err.Error())
+	}
 	go func(ln *net.TCPListener) {
 		for {
 			conn, err := ln.AcceptTCP()
-			context.CheckError(err)
+			// context.CheckError(err)
+			if err != nil {
+				log.Printf("AcceptTCP Error: error message<%v>\n", err.Error())
+				// fmt.Fprintf(os.Stderr)
+				os.Exit(0)
+				// log.Fatalln(err.Error())
+			}
 			cb, ok := tc.registedEvents["connection"]
 			if ok == false {
-				fmt.Fprintf(os.Stdout, "Error: Fail to load <Events:'connection'>\n")
+				log.Printf("Error: Fail to load <Events:'connection'>\n")
+				// fmt.Fprintf(os.Stdout,)
 				os.Exit(0)
 			}
 			tcpSocket := NewTcpSocket(curID, conn)
@@ -114,18 +128,39 @@ func (tc *TcpConnector) Start() {
 	}(listener)
 } //end Start()
 
+/// 为TcpConnector注册事件相应回调.
+///
+/// 至少要注册两个回调，一个是connection回调，用于新的连接到来时回调,
+/// 一个是message回调，当有新的message到来时回掉.
+///
+/// @param evName 事件名称，connection事件名称"connection",message事件名称为"message".
+/// @param callback 对应事件的回调函数.
+func (tc *TcpConnector) RegistEvents(evName string, callback func(...interface{})) {
+	tc.registedEvents[evName] = callback
+}
+
+/// Start之前调用，可以做一些必要的检查.
+func (tc *TcpConnector) beforeStart() {
+	if _, ok := tc.registedEvents["connection"]; ok == false {
+		log.Fatalln("Did not find call-back function for 'connection' events")
+	}
+
+	if _, ok := tc.registedEvents["message"]; ok == false {
+		log.Fatalln("Did not find call-back function for 'message' events")
+	}
+}
+
 /// 解码收到的客户端信息.
 ///
 /// 客户端的信息应该符合约定好的消息格式，否则解码失败.
 ///
 /// @param buff 收到的信息.
 /// @return rst {map[string]string} error 为nil表示解码成功,rst中以name:value形式.
-func (tc *TcpConnector) Decode(buff []byte) (rst interface{}, error) {
+func (tc *TcpConnector) Decode(buff []byte) (interface{}, error) {
 	var result interface{}
 	err := json.Unmarshal(buff, &result)
 	return result, err
 }
-
 
 /// 编码消息,编码成json格式.
 ///
@@ -133,12 +168,13 @@ func (tc *TcpConnector) Decode(buff []byte) (rst interface{}, error) {
 /// @route 请求路由
 /// @body 消息内容
 /// @return result 第二返回值error为nil的情况下result中存放编码成json后的内容
-func (tc *TcpConnector) Encode(reqID string, route string, body string) (result []byte, error) {
+func (tc *TcpConnector) Encode(reqID string, route string, body string) ([]byte, error) {
 	msg := make(map[string]interface{})
 	msg["id"] = reqID
 	msg["route"] = route
 	msg["body"] = body
 	msgJson, err := json.Marshal(msg)
+
 	if err != nil {
 		return nil, err
 	}

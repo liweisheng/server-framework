@@ -20,10 +20,12 @@ type MasterConsoleService struct {
 	status    int8
 }
 
-///创建新的MasterConsoleService
+/// 创建新的MasterConsoleService.
+///
+/// 创建MasterConsoleService时首先会拿到所有注册在Context中的module，建立moduleID到
+/// module的映射
 func NewMasterConsoleService(ctx *context.Context) *MasterConsoleService {
 	var modules = ctx.Modules
-	fmt.Fprintf(os.Stdout, "ctx.Modules: %v\n", modules)
 	var moduleMap = make(map[string]module.Module, 10)
 	var mAgent = agent.NewMasterAgent(ctx.Ch, ctx.MasterInfo)
 	for _, v := range modules {
@@ -49,7 +51,7 @@ func (m *MasterConsoleService) HandleNewAcception(conn net.Conn) {
 	handlerConnectionRecv(m, conn)
 }
 
-///监听端口.
+/// 开启监听端口，接收monitor的连接.
 ///
 ///hostAndPort   host:port
 func (m *MasterConsoleService) Listen(hostAndPort string) {
@@ -77,6 +79,10 @@ func (m *MasterConsoleService) Listen(hostAndPort string) {
 	}
 }
 
+/// 启动MasterConsoleService.
+///
+/// 启动时，首先开启监听，遍历所有挂载的模块，如果模块配置类型为pull或者push,这开启定时
+/// 调度，默认调度时间为5秒. 然后启动所有module.
 func (m *MasterConsoleService) Start() {
 	if m.status == SV_START {
 		fmt.Println("Info: Master Server is started already")

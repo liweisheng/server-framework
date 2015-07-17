@@ -14,6 +14,12 @@ type ConnectionService struct {
 	loggedInfo  map[string]interface{}
 }
 
+func NewConnectionService(serverid string) *ConnectionService {
+	loggedInfo := make(map[string]interface{})
+
+	return &ConnectionService{serverid, 0, 0, loggedInfo}
+}
+
 /// 增加登录用户以及其信息.
 ///
 /// @param uid 用户id

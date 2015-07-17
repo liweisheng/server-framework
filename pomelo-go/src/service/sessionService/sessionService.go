@@ -25,23 +25,23 @@ const (
 )
 
 type SessionService struct {
-	sessions  map[uint32]*Session   /// id->session
-	uidMap    map[string][]*Session /// uid->sessions
-	multiBind bool                  /// true表示允许uid绑定多个session
-	options   map[string]string     /// 选项
+	sessions  map[uint32]*Session    /// id->session
+	uidMap    map[string][]*Session  /// uid->sessions
+	multiBind bool                   /// true表示允许uid绑定多个session
+	options   map[string]interface{} /// 选项
 }
 
 /// 创建新的SessionService.
 ///
 /// @param opts 指定创建SessionService的选项，选项是name:value的形式
 /// @return *SessionService
-func NewSessionService(opts map[string]string) *SessionService {
+func NewSessionService(opts map[string]interface{}) *SessionService {
 	if nil == opts {
-		opts = make(map[string]string)
+		opts = make(map[string]interface{})
 	}
 	sessions := make(map[uint32]*Session)
 	uidmap := make(map[string][]*Session)
-	multibind := opts["multiBind"] != ""
+	multibind := opts["multiBind"].(string) != ""
 	return &SessionService{sessions, uidmap, multibind, opts}
 }
 

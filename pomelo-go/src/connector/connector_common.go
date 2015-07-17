@@ -16,3 +16,9 @@ type Socket interface {
 	Receive([]byte) (int, error)
 	Disconnect() int
 }
+
+type Connector interface {
+	Start()
+	Decode([]byte) (interface{}, error)
+	Encode(string, string, string) ([]byte, error)
+}
