@@ -31,7 +31,7 @@ func NewContext() *Context {
 	masterInfo := make(map[string]interface{})
 	serverInfo := make(map[string][]map[string]interface{})
 	allOpts := make(map[string]map[string]interface{})
-	return &Context{ch, "", mods, curS, masterInfo, serverInfo, allOpts}
+	return &Context{ch, "", mods, nil, curS, masterInfo, serverInfo, allOpts}
 }
 
 /// 向上下文中注册一个module.

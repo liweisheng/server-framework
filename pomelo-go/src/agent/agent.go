@@ -12,6 +12,5 @@ const (
 )
 
 type Agent interface {
-	// NotifyAll()
-	// AddConnection(conn net.Conn)
+	IsMaster() bool
 }

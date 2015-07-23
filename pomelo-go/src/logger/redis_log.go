@@ -35,11 +35,10 @@ func (*defaultFormatter) Format(msg []byte) []byte {
 	return []byte(afterFmt)
 }
 
-
 type Logger struct {
-	logLev   uint8   /// 限制日志输出级别，大于等于这个级别可以输出.
-	servAddr string	 /// redis服务器地址
-	servPort int     /// redis服务器端口
+	logLev   uint8  /// 限制日志输出级别，大于等于这个级别可以输出.
+	servAddr string /// redis服务器地址
+	servPort int    /// redis服务器端口
 	client   redis.Client
 	fmter    Formatter /// 格式化器
 }

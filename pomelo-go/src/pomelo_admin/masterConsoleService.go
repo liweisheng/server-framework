@@ -77,6 +77,7 @@ func (m *MasterConsoleService) Listen(hostAndPort string) {
 			go m.HandleNewAcception(conn)
 		}
 	}
+	fmt.Println("Listen end")
 }
 
 /// 启动MasterConsoleService.

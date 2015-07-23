@@ -25,6 +25,10 @@ func (ma *MasterAgent) NotifyAll() {
 	}
 }
 
+func (ma *MasterAgent) GetMasterInfo() map[string]interface{} {
+	return ma.MasterInfo
+}
+
 func (ma *MasterAgent) AddConnection(conn net.Conn) {
 	ma.lock.Lock()
 	defer ma.lock.Unlock()
@@ -35,6 +39,10 @@ func (ma *MasterAgent) RemoveConnection(conn net.Conn) {
 	ma.lock.Lock()
 	defer ma.lock.Unlock()
 	delete(ma.Conns, conn)
+}
+
+func (ma *MasterAgent) IsMaster() bool {
+	return true
 }
 
 func NewMasterAgent(ch chan int8, masterInfo map[string]interface{}) *MasterAgent {

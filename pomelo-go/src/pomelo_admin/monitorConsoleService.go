@@ -18,9 +18,9 @@ type MonitorConsoleService struct {
 	status       int8
 }
 
-func NewMonitorConsoleService(ctx *context.Context, servInfo map[string]interface{}) *MonitorConsoleService {
+func NewMonitorConsoleService(ctx *context.Context) *MonitorConsoleService {
 	moduleMap := make(map[string]module.Module)
-	monitorAgent := agent.NewMonitorAgent(ctx.MasterInfo, servInfo)
+	monitorAgent := agent.NewMonitorAgent(ctx.MasterInfo, ctx.CurrentServer)
 	return &MonitorConsoleService{ctx, moduleMap, monitorAgent, SV_INIT}
 
 }
@@ -33,6 +33,11 @@ func (m *MonitorConsoleService) handleConnection(conn net.Conn) {
 	handlerConnectionRecv(m, conn)
 }
 
+/// 启动monitor.
+///
+/// 启动monitor时会首先拿到所有注册的module，并挂载到MonitorConsoleService上,
+/// 然后对于设置类型为“push”的module定时调度其MonitoHandler方法, 为设置interval时
+/// 默认定时调度时间5秒.
 func (m *MonitorConsoleService) Start() {
 	if m.status == SV_START {
 		return
@@ -49,6 +54,20 @@ func (m *MonitorConsoleService) Start() {
 	}
 
 	go m.handleConnection(conn)
+
+	for _, mod := range m.ModuleMap {
+		if mod != nil {
+			if mod.GetType() == "push" {
+				interval := mod.GetInterval()
+
+				if interval == 0 {
+					interval = 5
+				}
+
+				go module.PeriodicScheduler(mod.MonitorHandler, m.monitorAgent, interval)
+			}
+		}
+	}
 
 }
 
