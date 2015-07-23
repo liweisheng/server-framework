@@ -21,6 +21,7 @@ type Context struct {
 	MasterInfo    map[string]interface{}
 	ServerInfo    map[string][]map[string]interface{}
 	AllOpts       map[string]map[string]interface{}
+	Logger        seelog.LoggerInterface
 }
 
 //创建新的上下文
@@ -32,7 +33,13 @@ func NewContext() *Context {
 	masterInfo := make(map[string]interface{})
 	serverInfo := make(map[string][]map[string]interface{})
 	allOpts := make(map[string]map[string]interface{})
-	return &Context{ch, "", mods, nil, curS, masterInfo, serverInfo, allOpts}
+	logger, err := seelog.LoggerFromConfigAsFile("./logConfig.xml")
+
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error: Fail to create logger,error message:<%v>\n", err.Error())
+		os.Exit(1)
+	}
+	return &Context{ch, "", mods, nil, curS, masterInfo, serverInfo, allOpts, logger}
 }
 
 /// 向上下文中注册一个module.
