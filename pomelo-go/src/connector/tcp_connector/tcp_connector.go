@@ -155,7 +155,7 @@ func (tc *TcpConnector) beforeStart() {
 /// 客户端的信息应该符合约定好的消息格式，否则解码失败.
 ///
 /// @param buff 收到的信息.
-/// @return rst {map[string]string} error 为nil表示解码成功,rst中以name:value形式.
+/// @return rst {map[string]interface{} } error 为nil表示解码成功,rst中以name:value形式.
 func (tc *TcpConnector) Decode(buff []byte) (interface{}, error) {
 	var result interface{}
 	err := json.Unmarshal(buff, &result)
@@ -168,7 +168,7 @@ func (tc *TcpConnector) Decode(buff []byte) (interface{}, error) {
 /// @route 请求路由
 /// @body 消息内容
 /// @return result 第二返回值error为nil的情况下result中存放编码成json后的内容
-func (tc *TcpConnector) Encode(reqID string, route string, body string) ([]byte, error) {
+func (tc *TcpConnector) Encode(reqID string, route string, body map[string]interface{}) ([]byte, error) {
 	msg := make(map[string]interface{})
 	msg["id"] = reqID
 	msg["route"] = route

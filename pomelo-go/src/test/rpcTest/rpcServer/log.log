@@ -1,0 +1,3 @@
+[Debug] msgServer.go 58 [2015-07-26 11:30:51] H:/pomelo-go/server-framework/pomelo-go/src/rpcserver/backend/msgServer/msgServer.go  Rpc Server listening: <127.0.0.1:8888> 
+[Debug] msgServer.go 58 [2015-07-26 12:01:15] H:/pomelo-go/server-framework/pomelo-go/src/rpcserver/backend/msgServer/msgServer.go  Rpc Server listening: <127.0.0.1:8888> 
+[Debug] msgServer.go 64 [2015-07-26 12:01:19] H:/pomelo-go/server-framework/pomelo-go/src/rpcserver/backend/msgServer/msgServer.go  Rpc Server accept new connection 

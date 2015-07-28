@@ -1,0 +1,3 @@
+[Debug] rpcClient.go 50 [2015-07-26 12:01:19] h:/pomelo-go/server-framework/pomelo-go/src/rpcclient/rpcClient.go  Rpc client call for remote method<Echo.Hi>,remote serverid<self> 
+[Error] rpcClient.go 22 [2015-07-26 12:05:33] rpcClient.go  Error,this is just for test 
+[Error] rpcClient.go 22 [2015-07-26 12:05:52] rpcClient.go  Error,this is just for test 

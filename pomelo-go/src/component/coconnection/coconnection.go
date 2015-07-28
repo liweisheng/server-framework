@@ -12,6 +12,8 @@ type CoConnection struct {
 
 func NewCoConnection(ctx *context.Context) *CoConnection {
 	cs := connectionService.NewConnectionService(ctx.GetServerID())
-	return &CoConnection{cs, ctx}
 
+	coconn := &CoConnection{cs, ctx}
+	ctx.RegisteComponent("coconnection", coconn)
+	return coconn
 }

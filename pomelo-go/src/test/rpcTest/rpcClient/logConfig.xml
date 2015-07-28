@@ -1,0 +1,18 @@
+<seelog>
+    <outputs>
+        <splitter formatid="common">
+            
+            <file path="log.log"/>
+            
+        </splitter>
+        <filter levels="critical,error" formatid="common" >
+			<console/>
+            <file path="criticalAndError.log"/>  
+        </filter>
+    </outputs>
+    <formats>
+        <format id="common" format="[%Level] %File %Line [%Date %Time] %RelFile  %Msg %n"/>
+       
+        
+    </formats>
+</seelog>

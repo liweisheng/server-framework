@@ -14,6 +14,7 @@ package sessionService
 import (
 	"connector"
 	"fmt"
+	seelog "github.com/cihub/seelog"
 	"os"
 	// "context"
 )
@@ -69,8 +70,8 @@ func (ss *SessionService) BindUID(uid string, sid uint32) error {
 		return fmt.Errorf("Error: Failed to find session with sid<%v>\n", sid)
 	}
 
-	if session.uid != "" {
-		if session.uid == uid {
+	if session.Uid != "" {
+		if session.Uid == uid {
 			//session已经绑定的相同的uid,返回
 			return nil
 		} else {
@@ -87,7 +88,7 @@ func (ss *SessionService) BindUID(uid string, sid uint32) error {
 	}
 
 	for _, elem := range sessions {
-		if elem.uid == uid {
+		if elem.Uid == uid {
 			//已经有session绑定uid
 			return nil
 		}
@@ -111,7 +112,7 @@ func (ss *SessionService) UnbindUID(uid string, sid uint32) error {
 		return fmt.Errorf("Error: Failed to find session with sid<%v>\n", sid)
 	}
 
-	if session.uid != uid {
+	if session.Uid != uid {
 		fmt.Fprintf(os.Stderr, "Error: session with sid<%v> has not bind with uid<%v>\n", sid, uid)
 		return fmt.Errorf("Error: session with sid<%v> has not bind with uid<%v>\n", sid, uid)
 	}
@@ -122,7 +123,7 @@ func (ss *SessionService) UnbindUID(uid string, sid uint32) error {
 	if ok == true {
 		var index int = -1
 		for i, v := range sessions {
-			if v.id == sid {
+			if v.Id == sid {
 				index = i
 				break
 			}
@@ -167,7 +168,7 @@ func (ss SessionService) RemoveSessionByID(sid uint32) {
 	session, ok := ss.sessions[sid]
 
 	if ok == true {
-		uid := session.uid
+		uid := session.Uid
 		delete(ss.sessions, sid)
 		sessions := ss.uidMap[uid]
 
@@ -175,7 +176,7 @@ func (ss SessionService) RemoveSessionByID(sid uint32) {
 			var index int = -1
 
 			for i, v := range sessions {
-				if v.id == sid {
+				if v.Id == sid {
 					index = i
 					break
 				}
@@ -210,7 +211,7 @@ func (ss *SessionService) KickByUID(uid string, reason string) {
 		}
 
 		for _, elem := range sess {
-			ss.sessions[elem.id].close(reason)
+			ss.sessions[elem.Id].close(reason)
 		}
 	}
 } //end KickByUID
@@ -237,10 +238,29 @@ func (ss *SessionService) GetClientAddrBySID(sid uint32) map[string]string {
 	session, ok := ss.sessions[sid]
 
 	if ok == true {
-		return session.socket.RemoteAddress()
+		return session.Socket.RemoteAddress()
 	}
 
 	return nil
+}
+
+func (ss *SessionService) PushOpt(sid uint32, key string, value interface{}) {
+	session, ok := ss.sessions[sid]
+
+	if ok == true {
+
+		seelog.Infof("Push opt with key<%v> value<%v> to session<%v>", key, value, sid)
+		session.SetOpt(key, value)
+	}
+}
+
+func (ss *SessionService) PushAllOpts(sid uint32, opts map[string]interface{}) {
+	session, ok := ss.sessions[sid]
+
+	if ok == true {
+		seelog.Infof("Push all opts to session<%v>", sid)
+		session.SetAllOpts(opts)
+	}
 }
 
 /// 发送信息到session id绑定的连接上.
@@ -305,28 +325,46 @@ func (ss *SessionService) SendBatchByUID(uid string, msgs ...[]byte) {
 }
 
 type Session struct {
-	status     int8
-	id         uint32
-	uid        string
-	frontendID string
-	socket     connector.Socket
+	Status     int8
+	Id         uint32
+	Uid        string
+	FrontendID string
+	Socket     connector.Socket
+	Opts       map[string]interface{}
 }
 
 /// 创建新的session,创建时的参数都不可以为空，由调用者保证.
 func newSession(sid uint32, frontendId string, socket connector.Socket) *Session {
-	return &Session{SS_INITED, sid, "", frontendId, socket}
+	opts := make(map[string]interface{})
+	return &Session{SS_INITED, sid, "", frontendId, socket, opts}
 }
 
 /// 绑定用户ID.
 ///
 /// @param uid {string} 用户id
 func (s *Session) bindUID(uid string) {
-	s.uid = uid
+	s.Uid = uid
 }
 
 ///解除用户ID的和session的绑定.
 func (s *Session) unbindUID() {
-	s.uid = ""
+	s.Uid = ""
+}
+
+func (s *Session) SetOpt(key string, value interface{}) {
+	s.Opts[key] = value
+}
+
+func (s *Session) GetOpt(key string) interface{} {
+	return s.Opts[key]
+}
+
+func (s *Session) SetAllOpts(opts map[string]interface{}) {
+	s.Opts = opts
+}
+
+func (s *Session) GetAllOpts() map[string]interface{} {
+	return s.Opts
 }
 
 /// 关闭session，关闭session会关闭session保持的socket，
@@ -334,19 +372,19 @@ func (s *Session) unbindUID() {
 ///
 /// TODO: 应该在断开连接之前给客户端发送一段简短提示信息.
 func (s *Session) close(reason string) {
-	if s.status == SS_CLOSED {
+	if s.Status == SS_CLOSED {
 		return
 	}
 
-	s.status = SS_CLOSED
+	s.Status = SS_CLOSED
 	// s.socket.RemoteAddress()
-	s.socket.Disconnect()
+	s.Socket.Disconnect()
 }
 
 func (s *Session) send(msg []byte) {
-	s.socket.Send(msg)
+	s.Socket.Send(msg)
 }
 
 func (s *Session) sendBatch(msgs ...[]byte) {
-	s.socket.SendBatch(msgs...)
+	s.Socket.SendBatch(msgs...)
 }

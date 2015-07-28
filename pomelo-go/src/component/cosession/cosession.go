@@ -21,5 +21,9 @@ type CoSession struct {
 /// 创建CoSession.
 func NewCoSession(ctx *context.Context) *CoSession {
 	ss := sessionService.NewSessionService(ctx.AllOpts["cosession"])
-	return &CoSession{ss, ctx}
+
+	cosess := &CoSession{ss, ctx}
+
+	ctx.RegisteComponent("cosession", cosess)
+	return cosess
 }

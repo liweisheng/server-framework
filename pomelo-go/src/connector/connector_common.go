@@ -20,5 +20,5 @@ type Socket interface {
 type Connector interface {
 	Start()
 	Decode([]byte) (interface{}, error)
-	Encode(string, string, string) ([]byte, error)
+	Encode(string, string, map[string]interface{}) ([]byte, error)
 }

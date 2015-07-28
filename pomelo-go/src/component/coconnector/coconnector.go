@@ -26,7 +26,7 @@ type CoConnector struct {
 	cosess *cosession.CoSession
 	coconn *coconnection.CoConnection
 	decode func([]byte) (interface{}, error)
-	encode func(string, string, string) ([]byte, error)
+	encode func(string, string, map[string]interface{}) ([]byte, error)
 }
 
 /// 创建新的CoConnetor组件.
@@ -35,19 +35,22 @@ type CoConnector struct {
 /// CoServer组件则通过Context拿到，在CoConnector组件启动时加载.
 func NewCoConnector(ctx *context.Context) *CoConnector {
 	var decode func([]byte) (interface{}, error)
-	var encode func(string, string, string) ([]byte, error)
+	var encode func(string, string, map[string]interface{}) ([]byte, error)
 
 	cnct := getConnector(ctx)
 
 	if opts, ok := ctx.AllOpts["coconnector"]; ok == true {
 		decode, _ = opts["decode"].(func([]byte) (interface{}, error))
-		encode, _ = opts["encode"].(func(string, string, string) ([]byte, error))
+		encode, _ = opts["encode"].(func(string, string, map[string]interface{}) ([]byte, error))
 	}
 
-	cosess := cosession.NewCoSession(ctx)
-	coconn := coconnection.NewCoConnection(ctx)
+	cosess, ok := ctx.GetComponent("cosession").(*cosession.CoSession)
 
-	return &CoConnector{ctx, cnct, cosess, coconn, decode, encode}
+	coconn, _ := ctx.GetComponent("coconnection").(*coconnection.CoConnection)
+
+	cocnct := &CoConnector{ctx, cnct, cosess, coconn, decode, encode}
+	ctx.RegisteComponent("coconnector", cocnct)
+	return cocnct
 }
 
 func (cc *CoConnector) Start() {
@@ -58,8 +61,8 @@ func (cc *CoConnector) Start() {
 ///
 /// 如果用户配置了connector(保存在Context中)，则使用全局配置的connector,
 /// 否者使用默认的TcpConnector.
-func (cc *CoConnector) getConnector() connector.Connector {
-	opts := cc.ctx.AllOpts["coconnector"]
+func getConnector(ctx *context.Context) connector.Connector {
+	opts := ctx.AllOpts["coconnector"]
 	if opts != nil {
 		if c, setted := opts["connector"]; setted == true {
 			if cnct, ok := c.(connector.Connector); ok == true {
@@ -68,7 +71,7 @@ func (cc *CoConnector) getConnector() connector.Connector {
 		}
 	}
 
-	curServer := cc.ctx.CurrentServer
+	curServer := ctx.CurrentServer
 	host, _ := curServer["host"].(string)
 	port, _ := curServer["port"].(string)
 	return tcp_connector.NewTcpConnector(host, port, nil)
