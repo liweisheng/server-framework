@@ -2,6 +2,7 @@ package corpcclient
 
 import (
 	"context"
+	"github.com/cihub/seelog"
 	"rpcclient"
 )
 
@@ -22,7 +23,7 @@ func NewCoRpcClient() *CoRpcClient {
 	coRpcC = &CoRpcClient{rpcC}
 
 	ctx.RegisteComponent("corpcclient", coRpcC)
-
+	seelog.Info("CoRpcClient create successfully")
 	return coRpcC
 
 }

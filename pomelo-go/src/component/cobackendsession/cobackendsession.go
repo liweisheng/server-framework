@@ -6,15 +6,20 @@ import (
 )
 
 type CoBackendSession struct {
-	*backendSessionService
+	*backendSessionService.BackendSessionService
 }
 
 func NewCoBackendSession() *CoBackendSession {
 	ctx := context.GetContext()
 
+	coBS, ok := ctx.GetComponent("cobackendsession").(*CoBackendSession)
+	if ok == true {
+		return coBS
+	}
 	bss := backendSessionService.NewBackendSessionService(ctx)
-	cobs := &CoBackendSession{bss}
+	coBS = &CoBackendSession{bss}
 
-	ctx.RegisteComponent("cobackendsession", cobs)
-	return cobs
+	ctx.RegisteComponent("cobackendsession", coBS)
+
+	return coBS
 }

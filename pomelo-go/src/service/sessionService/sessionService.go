@@ -16,6 +16,7 @@ import (
 	"fmt"
 	seelog "github.com/cihub/seelog"
 	"os"
+	"sync"
 	// "context"
 )
 
@@ -30,6 +31,8 @@ type SessionService struct {
 	uidMap    map[string][]*Session  /// uid->sessions
 	multiBind bool                   /// true表示允许uid绑定多个session
 	options   map[string]interface{} /// 选项
+	rwMutexS  *sync.RWMutex          /// sessions读写锁
+	rwMutexUm *sync.RWMutex          /// uidMap 读写锁
 }
 
 /// 创建新的SessionService.
@@ -42,8 +45,10 @@ func NewSessionService(opts map[string]interface{}) *SessionService {
 	}
 	sessions := make(map[uint32]*Session)
 	uidmap := make(map[string][]*Session)
-	multibind := opts["multiBind"].(string) != ""
-	return &SessionService{sessions, uidmap, multibind, opts}
+	multibind := (opts["multiBind"].(string) != "")
+	rwMutexS := new(sync.RWMutex)
+	rwMutexUM := new(sync.RWMutex)
+	return &SessionService{sessions, uidmap, multibind, opts, rwMutexS, rwMutexUM}
 }
 
 /// 创建并返回新的session,同时SessionService内部维持此新的session
@@ -53,7 +58,10 @@ func NewSessionService(opts map[string]interface{}) *SessionService {
 /// @param socket 由session保持的底层连接,连接来自客户端
 /// @return *Session
 func (ss *SessionService) CreateSession(sid uint32, frontendID string, socket connector.Socket) *Session {
+	seelog.Debugf("<%v> CreateSession with sid<%v>", frontendID, sid)
 	session := newSession(sid, frontendID, socket)
+	ss.rwMutexS.Lock()
+	defer ss.rwMutexS.Unlock()
 	ss.sessions[sid] = session
 	return session
 }
@@ -64,7 +72,9 @@ func (ss *SessionService) CreateSession(sid uint32, frontendID string, socket co
 /// @param sid 待绑定的session的id.
 /// @return 绑定过程出错则返回错误，绑定成功返回nil
 func (ss *SessionService) BindUID(uid string, sid uint32) error {
+	ss.rwMutexS.RLock()
 	session := ss.sessions[sid]
+	ss.rwMutexS.RUnlock()
 	if nil == session {
 		fmt.Fprintf(os.Stderr, "Error: Failed to find session with sid<%v>\n", sid)
 		return fmt.Errorf("Error: Failed to find session with sid<%v>\n", sid)
@@ -80,6 +90,9 @@ func (ss *SessionService) BindUID(uid string, sid uint32) error {
 		}
 	}
 
+	ss.rwMutexUm.Lock()
+	defer ss.rwMutexUm.Unlock()
+
 	sessions, ok := ss.uidMap[uid]
 	if ss.multiBind == false && ok {
 		//multiBind == false禁止同一个uid绑定到多个session
@@ -94,6 +107,7 @@ func (ss *SessionService) BindUID(uid string, sid uint32) error {
 		}
 	}
 	session.bindUID(uid)
+
 	ss.uidMap[uid] = append(ss.uidMap[uid], session)
 	return nil
 
@@ -105,7 +119,9 @@ func (ss *SessionService) BindUID(uid string, sid uint32) error {
 /// @param sid session id.
 /// @return {error} 成功解除绑定放回nil，否者返回error.
 func (ss *SessionService) UnbindUID(uid string, sid uint32) error {
+	ss.rwMutexS.RLock()
 	session, ok := ss.sessions[sid]
+	ss.rwMutexS.RUnlock()
 	if ok == false {
 		//没有id为sid的session
 		fmt.Fprintf(os.Stderr, "Error: Failed to find session with sid<%v>\n", sid)
@@ -116,6 +132,9 @@ func (ss *SessionService) UnbindUID(uid string, sid uint32) error {
 		fmt.Fprintf(os.Stderr, "Error: session with sid<%v> has not bind with uid<%v>\n", sid, uid)
 		return fmt.Errorf("Error: session with sid<%v> has not bind with uid<%v>\n", sid, uid)
 	}
+
+	ss.rwMutexUm.Lock()
+	defer ss.rwMutexUm.Unlock()
 
 	sessions, ok := ss.uidMap[uid]
 
@@ -149,6 +168,9 @@ func (ss *SessionService) UnbindUID(uid string, sid uint32) error {
 /// @param sid session id
 /// @param 有sid对应的session则返回否则返回nil.
 func (ss *SessionService) GetSessionByID(sid uint32) *Session {
+	ss.rwMutexS.RLock()
+	defer ss.rwMutexS.RUnlock()
+
 	return ss.sessions[sid]
 }
 
@@ -157,6 +179,9 @@ func (ss *SessionService) GetSessionByID(sid uint32) *Session {
 /// @param uid 用户id.
 /// @return 返回nil或者用户绑定的session数组.
 func (ss *SessionService) GetSessionsByUID(uid string) []*Session {
+	ss.rwMutexUm.RLock()
+	defer ss.rwMutexUm.RUnlock()
+
 	return ss.uidMap[uid]
 } //end GetSessionByUID
 
@@ -165,6 +190,12 @@ func (ss *SessionService) GetSessionsByUID(uid string) []*Session {
 ///
 /// @param sid 移除的session id
 func (ss SessionService) RemoveSessionByID(sid uint32) {
+	ss.rwMutexS.Lock()
+	ss.rwMutexUm.Lock()
+
+	defer ss.rwMutexUm.Unlock()
+	defer ss.rwMutexS.Unlock()
+
 	session, ok := ss.sessions[sid]
 
 	if ok == true {
@@ -210,7 +241,11 @@ func (ss *SessionService) KickByUID(uid string, reason string) {
 			sess = append(sess, elem)
 		}
 
+		ss.rwMutexS.Lock()
+		defer ss.rwMutexS.Unlock()
+
 		for _, elem := range sess {
+
 			ss.sessions[elem.Id].close(reason)
 		}
 	}
@@ -222,7 +257,9 @@ func (ss *SessionService) KickByUID(uid string, reason string) {
 /// TODO: 在断开连接之前应当发送一段由reason表示提示信息.
 /// XXX: 断开连接后并未移除session.
 func (ss *SessionService) KickBySessionID(sid uint32, reason string) {
+	ss.rwMutexS.RLock()
 	session, ok := ss.sessions[sid]
+	ss.rwMutexS.RUnlock()
 
 	if ok {
 		session.close(reason)
@@ -235,7 +272,9 @@ func (ss *SessionService) KickBySessionID(sid uint32, reason string) {
 /// @return 返回地址信息或者nil.在成功返回的情况下，返回值的格式为name:value形式
 ///  如host:127.0.0.1 port:10000.
 func (ss *SessionService) GetClientAddrBySID(sid uint32) map[string]string {
+	ss.rwMutexS.RLock()
 	session, ok := ss.sessions[sid]
+	ss.rwMutexS.RUnlock()
 
 	if ok == true {
 		return session.Socket.RemoteAddress()
@@ -245,7 +284,9 @@ func (ss *SessionService) GetClientAddrBySID(sid uint32) map[string]string {
 }
 
 func (ss *SessionService) PushOpt(sid uint32, key string, value interface{}) {
+	ss.rwMutexS.RLock()
 	session, ok := ss.sessions[sid]
+	ss.rwMutexS.RUnlock()
 
 	if ok == true {
 
@@ -255,7 +296,9 @@ func (ss *SessionService) PushOpt(sid uint32, key string, value interface{}) {
 }
 
 func (ss *SessionService) PushAllOpts(sid uint32, opts map[string]interface{}) {
+	ss.rwMutexS.RLock()
 	session, ok := ss.sessions[sid]
+	ss.rwMutexS.RUnlock()
 
 	if ok == true {
 		seelog.Infof("Push all opts to session<%v>", sid)
@@ -269,7 +312,9 @@ func (ss *SessionService) PushAllOpts(sid uint32, opts map[string]interface{}) {
 /// @param msg 发送的信息,发送的信息应该有connector模块提供的encode函数编码过的信息
 /// XXX: 应该使用日志而不是输出到终端.
 func (ss *SessionService) SendMsgBySID(sid uint32, msg []byte) {
+	ss.rwMutexS.RLock()
 	session, ok := ss.sessions[sid]
+	ss.rwMutexS.RUnlock()
 
 	if ok == true {
 		session.send(msg)
@@ -284,6 +329,9 @@ func (ss *SessionService) SendMsgBySID(sid uint32, msg []byte) {
 /// @param uid  用户id.
 /// @param msg 发送的消息,发送的信息应该有connector模块提供的encode函数编码过的信息
 func (ss *SessionService) SendMsgByUID(uid string, msg []byte) {
+	ss.rwMutexUm.RLock()
+	defer ss.rwMutexUm.RUnlock()
+
 	sessions, ok := ss.uidMap[uid]
 	if ok == true {
 		for _, elem := range sessions {
@@ -298,7 +346,9 @@ func (ss *SessionService) SendMsgByUID(uid string, msg []byte) {
 
 /// XXX: 应该使用日志记录发送失败.
 func (ss *SessionService) SendBatchBySID(sid uint32, msgs ...[]byte) {
+	ss.rwMutexS.RLock()
 	session, ok := ss.sessions[sid]
+	ss.rwMutexS.RUnlock()
 
 	if ok == true {
 		session.sendBatch(msgs...)
@@ -312,7 +362,9 @@ func (ss *SessionService) SendBatchBySID(sid uint32, msgs ...[]byte) {
 ///
 /// @param uid 用户id
 func (ss *SessionService) SendBatchByUID(uid string, msgs ...[]byte) {
+	ss.rwMutexUm.RLock()
 	sessions, ok := ss.uidMap[uid]
+	ss.rwMutexUm.RUnlock()
 
 	if ok == true {
 		for _, elem := range sessions {
@@ -322,6 +374,12 @@ func (ss *SessionService) SendBatchByUID(uid string, msgs ...[]byte) {
 		fmt.Fprintf(os.Stderr, "Try to send batch of messages to user with uid<%v>,which dose not exist\n", uid)
 		return
 	}
+}
+
+type SimpleSession struct {
+	Id         uint32
+	Uid        string
+	FrontendID string
 }
 
 type Session struct {
@@ -337,6 +395,10 @@ type Session struct {
 func newSession(sid uint32, frontendId string, socket connector.Socket) *Session {
 	opts := make(map[string]interface{})
 	return &Session{SS_INITED, sid, "", frontendId, socket, opts}
+}
+
+func (s *Session) ToSimpleSession() *SimpleSession {
+	return &SimpleSession{s.Id, s.Uid, s.FrontendID}
 }
 
 /// 绑定用户ID.

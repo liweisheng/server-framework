@@ -14,15 +14,20 @@ package coconnector
 
 import (
 	"component/coconnection"
+	"component/coserver"
 	"component/cosession"
 	"connector"
 	"connector/tcp_connector"
 	"context"
+	seelog "github.com/cihub/seelog"
+	"service/sessionService"
+	"strings"
 )
 
 type CoConnector struct {
 	ctx    *context.Context
 	cnct   connector.Connector
+	coserv *coserver.CoServer
 	cosess *cosession.CoSession
 	coconn *coconnection.CoConnection
 	decode func([]byte) (interface{}, error)
@@ -34,6 +39,12 @@ type CoConnector struct {
 /// 创建CoConnector组件时，CoConnector组件使用到的CoSession组件,CoConnection组件一同创建，
 /// CoServer组件则通过Context拿到，在CoConnector组件启动时加载.
 func NewCoConnector(ctx *context.Context) *CoConnector {
+
+	cocnct, ok := ctx.GetComponent("coconnector").(*CoConnector)
+	if ok == true {
+		return cocnct
+	}
+
 	var decode func([]byte) (interface{}, error)
 	var encode func(string, string, map[string]interface{}) ([]byte, error)
 
@@ -44,15 +55,77 @@ func NewCoConnector(ctx *context.Context) *CoConnector {
 		encode, _ = opts["encode"].(func(string, string, map[string]interface{}) ([]byte, error))
 	}
 
-	cosess, ok := ctx.GetComponent("cosession").(*cosession.CoSession)
+	coserv, ok1 := ctx.GetComponent("coserver").(*coserver.CoServer)
+	if ok1 == false {
+		coserv = coserver.NewCoServer()
+	}
 
-	coconn, _ := ctx.GetComponent("coconnection").(*coconnection.CoConnection)
+	cosess, ok2 := ctx.GetComponent("cosession").(*cosession.CoSession)
+	if ok2 == false {
+		cosess = cosession.NewCoSession()
+	}
 
-	cocnct := &CoConnector{ctx, cnct, cosess, coconn, decode, encode}
+	coconn, ok3 := ctx.GetComponent("coconnection").(*coconnection.CoConnection)
+	if ok3 == false {
+		coconn = coconnection.NewCoConnection()
+	}
+
+	cocnct = &CoConnector{ctx, cnct, coserv, cosess, coconn, decode, encode}
 	ctx.RegisteComponent("coconnector", cocnct)
 	return cocnct
 }
 
+/// 向sids标示的所有session发送消息.
+///
+/// @param reqID 请求id
+/// @param route 路由
+/// @param msg 发送的消息
+/// @param sids 接受消息的session
+func (cocnct *CoConnector) Send(reqID string, route string, msg map[string]interface{}, sids []uint32) {
+	seelog.Debugf("<%v> send msg<%v> with reqID<%v>,route<%v> to sids<%v>", cocnct.ctx.GetServerID(), msg, reqID, route, sids)
+
+	var encodedMsg []byte
+	var err error
+	if cocnct.encode != nil {
+		encodedMsg, err = cocnct.encode(reqID, route, msg)
+	} else {
+		encodeFunc := cocnct.cnct.Encode
+		encodedMsg, err = encodeFunc(reqID, route, msg)
+	}
+
+	if err != nil {
+		seelog.Errorf("<%v> encode msg<%v> error<%v>", cocnct.ctx.GetServerID(), msg, err.Error())
+		return
+	}
+
+	for _, sid := range sids {
+		go cocnct.cosess.SendMsgBySID(sid, encodedMsg)
+	}
+}
+
+/// 回调函数，当有新连接到来时调用该回调函数，创建并记录session,该回调函数注册给connector使用.
+func (cocnct *CoConnector) ConnectionEventCB(sock connector.Socket) *sessionService.Session {
+	session := cocnct.cosess.CreateSession(sock.ID(), cocnct.ctx.GetServerID(), sock)
+	return session
+}
+
+/// 回调函数，当连接上有新的message到来时调用该回调函数,该回调函数注册给connector使用.
+func (cocnct *CoConnector) MessageEventCB(session *sessionService.Session, msg map[string]interface{}) {
+	route, _ := msg["route"].(string)
+	if cocnct.checkRouteValidity(route) == false {
+		seelog.Errorf("<%v> invalid route<%v>", cocnct.ctx.GetServerID(), route)
+		return
+	}
+}
+
+/// 检查路由的合法性，路由格式是:serverType.handler.method
+///
+/// 考虑请求聊天服务器chatServer新用户登录，则route格式为chatServer.UserManager.
+func (cocnct *CoConnector) checkRouteValidity(route string) bool {
+	return strings.Index(route, ".") != -1
+}
+
+/// 启动组件.
 func (cc *CoConnector) Start() {
 
 }

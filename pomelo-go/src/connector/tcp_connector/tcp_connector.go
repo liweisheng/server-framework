@@ -9,26 +9,29 @@ package tcp_connector
 
 import (
 	// "context"
+
+	"context"
 	"encoding/json"
-	"fmt"
+	"github.com/cihub/seelog"
 	"log"
 	"net"
 	"os"
 )
 
-var curID int32 = 0
+var curID uint32 = 0
 
 type TcpConnector struct {
 	host           string
 	port           string
 	opts           map[string]string
 	registedEvents map[string]func(args ...interface{})
+	ctx            *context.Context
 }
 
 /// 创建新的TcpConnector
 func NewTcpConnector(host string, port string, opts map[string]string) *TcpConnector {
 	regE := make(map[string]func(args ...interface{}))
-	return &TcpConnector{host, port, opts, regE}
+	return &TcpConnector{host, port, opts, regE, context.GetContext()}
 }
 
 /// 处理新接收到的连接.
@@ -37,25 +40,36 @@ func NewTcpConnector(host string, port string, opts map[string]string) *TcpConne
 ///
 /// @param tcpSkt 与客户端连接的socket.
 func (tc *TcpConnector) HandleNewConnection(tcpSkt *TcpSocket) {
+	defer tcpSkt.Disconnect()
+
+	cb, ok := tc.registedEvents["connection"]
+	if ok == false {
+		seelog.Critical("Fail to load <Events:'connection'>\n")
+		os.Exit(0)
+	}
+	cb(tcpSkt)
+	seelog.Infof("<%v> handle new connection with id<%v>", tc.ctx.GetServerID(), tcpSkt.ID())
+
 	const BUFSIZE uint16 = 1024 * 8
 	var buff, recvBuff []byte
 	var begin, end, packSize, unProcess uint16
 
 	recvBuff = make([]byte, BUFSIZE)
 	buff = make([]byte, BUFSIZE)
-	for {
 
+	for {
 		n, err := tcpSkt.Receive(recvBuff)
 
 		if err != nil {
-			fmt.Fprintf(os.Stderr, "Error: Read from conn , err message :%v\n", err.Error())
-			errEv, ok := tc.registedEvents["error"]
-			if ok == false {
-				fmt.Fprintf(os.Stderr, "Error: Can not find registed event handler<'error'>")
-				os.Exit(1)
-			}
+			seelog.Errorf("<%v> Read from sockid<%v> error<%v> ", tc.ctx.GetServerID(), tcpSkt.ID(), err.Error())
+			// errEv, ok := tc.registedEvents["error"]
+			// if ok == false {
+			// 	fmt.Fprintf(os.Stderr, "Error: Can not find registed event handler<'error'>")
+			// 	os.Exit(1)
+			// }
 
-			errEv(tcpSkt)
+			// errEv(tcpSkt)
+			// break
 			break
 		}
 		if begin >= end {
@@ -70,18 +84,22 @@ func (tc *TcpConnector) HandleNewConnection(tcpSkt *TcpSocket) {
 
 		for unProcess >= 1 {
 			packSize = uint16(0x00FF&buff[begin])<<8 + uint16(0x00FF&buff[begin+1])
-			fmt.Fprintf(os.Stdout, "packsize is %v\n", packSize)
+
 			if unProcess >= packSize {
 				msg, err := tc.Decode(buff[begin+2 : begin+packSize])
 				if err == nil {
 					// goto DecodeErr
 					msgEv, ok := tc.registedEvents["message"]
 					if ok == false {
-						fmt.Fprintf(os.Stderr, "Error: Can not find registed event handler<'message'>")
+						seelog.Critical("Error: Can not find registed event handler<'message'>")
 						os.Exit(1)
 					}
+					seelog.Debugf("<%v> recive msg<%v> from sid<%v>", tc.ctx.GetServerID(), msg, tcpSkt.ID())
 					//处理接收到的消息
 					go msgEv(msg)
+				} else {
+					seelog.Errorf("<%v> Decode message from sid<%v> error<%v>", tc.ctx.GetServerID(), tcpSkt.ID(), err.Error())
+					return
 				}
 				unProcess -= packSize
 				begin += packSize
@@ -106,23 +124,16 @@ func (tc *TcpConnector) Start() {
 		log.Fatal(err.Error())
 	}
 	go func(ln *net.TCPListener) {
+		defer ln.Close()
 		for {
 			conn, err := ln.AcceptTCP()
 			// context.CheckError(err)
 			if err != nil {
-				log.Printf("AcceptTCP Error: error message<%v>\n", err.Error())
-				// fmt.Fprintf(os.Stderr)
-				os.Exit(0)
-				// log.Fatalln(err.Error())
-			}
-			cb, ok := tc.registedEvents["connection"]
-			if ok == false {
-				log.Printf("Error: Fail to load <Events:'connection'>\n")
-				// fmt.Fprintf(os.Stdout,)
+				seelog.Criticalf("AcceptTcp on host<%v> port<%v> error<%v>", tc.host, tc.port, err.Error())
 				os.Exit(0)
 			}
 			tcpSocket := NewTcpSocket(curID, conn)
-			cb(tcpSocket)
+
 			go tc.HandleNewConnection(tcpSocket)
 		} //end for
 	}(listener)
@@ -140,6 +151,7 @@ func (tc *TcpConnector) RegistEvents(evName string, callback func(...interface{}
 }
 
 /// Start之前调用，可以做一些必要的检查.
+/// XXX:未实现机制
 func (tc *TcpConnector) beforeStart() {
 	if _, ok := tc.registedEvents["connection"]; ok == false {
 		log.Fatalln("Did not find call-back function for 'connection' events")

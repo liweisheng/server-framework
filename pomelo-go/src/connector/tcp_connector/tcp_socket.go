@@ -11,19 +11,21 @@ package tcp_connector
 import (
 	"connector"
 	// "context"
+	"context"
+	"github.com/cihub/seelog"
 	"log"
 	"net"
 )
 
 type TcpSocket struct {
 	socket     *net.TCPConn
-	id         int32
+	id         uint32
 	remoteAddr map[string]interface{}
 	status     int8
 }
 
 //创建新的TcpSocket.参数id,sock不可以为空
-func NewTcpSocket(id int32, sock *net.TCPConn) *TcpSocket {
+func NewTcpSocket(id uint32, sock *net.TCPConn) *TcpSocket {
 	remoteAddr := make(map[string]interface{})
 	addr := sock.RemoteAddr()
 	host, port, err := net.SplitHostPort(addr.String())
@@ -41,7 +43,7 @@ func (ts *TcpSocket) Socket() interface{} {
 	return ts.socket
 }
 
-func (ts *TcpSocket) ID() int32 {
+func (ts *TcpSocket) ID() uint32 {
 	return ts.id
 }
 
@@ -67,6 +69,7 @@ func (ts *TcpSocket) Receive(recv []byte) (int, error) {
 }
 
 func (ts *TcpSocket) Disconnect() {
+	seelog.Debugf("<%v> Disconnect sid<%v>", context.GetContext().GetServerID(), ts.id)
 	if ts.status == connector.ST_CLOSED {
 		return
 	}

@@ -3,7 +3,7 @@
  */
 
 /**
- * 该模块实现的功能是：定期上报加载该模块的服务器的信息.
+ * reportModule模块实现的功能是：定期上报加载该模块的服务器的信息.
  * 加载模块的monitor服务定期的执行MonitorHandler上报自身服务的信息（serverType，serverID，ip，clientPort，port）
  * 该模块底层使用redis来上报自身的信息, 并设置信息过期时间为MonitorHandler执行周期的2倍.
  */
@@ -14,7 +14,9 @@ import (
 	"log"
 	//"module"
 	// "fmt"
+	"github.com/cihub/seelog"
 	"net"
+	"os"
 	"redis"
 	"strconv"
 	"sync"
@@ -47,7 +49,7 @@ func (ri *ReportInfo) getServerInfoAsString(si map[string]interface{}) string {
 	port := strconv.Itoa(si["port"].(int))
 	clientPort := strconv.Itoa(si["clientPort"].(int))
 	frontend := si["frontend"].(string)
-	return id + ":" + host + ":" + port + ":" + clientPort + ":" + frontend
+	return id + "@" + host + "@" + port + "@" + clientPort + "@" + frontend
 }
 
 func (ri *ReportInfo) MonitorHandler(ag agent.Agent, conn net.Conn, msg map[string]interface{}) {
@@ -61,7 +63,8 @@ func (ri *ReportInfo) MonitorHandler(ag agent.Agent, conn net.Conn, msg map[stri
 		}
 		monitorAgent, ok := ag.(*agent.MonitorAgent)
 		if ok == false {
-			log.Fatal("MonitorHandler: Fail to convert to MonitorAgent")
+			seelog.Criticalf("MonitorHandler: Fail to convert to MonitorAgent,exit...")
+			os.Exit(0)
 		}
 		serverInfo := monitorAgent.GetServerInfo()
 		if serverInfo != nil {

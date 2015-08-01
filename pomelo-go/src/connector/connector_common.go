@@ -8,7 +8,7 @@ const (
 )
 
 type Socket interface {
-	ID() int32
+	ID() uint32
 	Socket() interface{}
 	RemoteAddress() map[string]string
 	Send([]byte) (int, error)

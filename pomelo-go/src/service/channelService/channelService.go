@@ -10,6 +10,7 @@
 package channelService
 
 import (
+	"component/cochannelrpcserver"
 	"component/corpcclient"
 	"context"
 	seelog "github.com/cihub/seelog"
@@ -53,7 +54,7 @@ func (cs *ChannelService) NewChannel(name string) *Channel {
 		return channel
 	} else {
 		seelog.Infof("channel with name<%v> doesn't exists,create new", name)
-		channel := NewChannel()
+		channel := newChannel()
 		cs.channels[name] = channel
 		return channel
 	}
@@ -88,37 +89,84 @@ func (cs *ChannelService) DestroyChannel(name string) {
 	delete(cs.channels, name)
 }
 
-func (cs *ChannelService) PushMsgByUIDs(route string, msg map[string]interface{}, uids []map[string]string) {
+func (cs *ChannelService) PushMsgByUIDs(route string, msg map[string]interface{}, uid2servid map[string][]string) {
 
-	uidsX := make([]string, 0)
+	// uidsX := make([]string, 0)
 
-	for uid, serverid := range uids {
-		if serverid == "" {
-			uidsX := append(uidsX, uid)
+	// for uid, serverid := range uids {
+	// 	if serverid == "" {
+	// 		uidsX := append(uidsX, uid)
+	// 	}
+	// }
+
+	// for uid := range uidsX {
+	// 	seelog.Warnf("uid<%v> with empty serverid,just ignore it", uid)
+	// 	delete(uids, uid)
+	// }
+	//serverid ->uids
+	sid2uid := make(map[string][]string)
+
+	for key, value := range uid2servid {
+		for _, servid := range value {
+			if servid == "" {
+				seelog.Warnf("uid<%v> with empty serverid, just ignore it", key)
+				continue
+			} else {
+				if uids, ok := sid2uid[servid]; ok == false {
+					uids := make([]string, 5)
+					uids = append(uids, key)
+					sid2uid[servid] = uids
+				} else {
+					uids = append(uids, key)
+					sid2uid[servid] = uids
+				}
+			}
 		}
 	}
-
-	for uid := range uidsX {
-		seelog.Warnf("uid<%v> with empty serverid,just ignore it", uid)
-		delete(uids, uid)
-	}
-
-	cs.sendMsgByGroup(route, msg, groups)
+	cs.sendMsgByGroup(route, msg, sid2uid)
 }
 
-func (cs *ChannelService) sendMsgByGroup(route string, msg map[string]interface{}, groups []map[string]string) {
-	seelog.Debugf("%v channelService sendMsgByGroup with route<%v> msg<%v> groups<%v>", cs.ctx.GetServerID(), route, msg, groups)
+/// 发送消息到groups中的所有用户.
+///
+/// @route 路由
+/// @param msg 发送的消息
+/// @param groups frontendID-> uids的映射
+func (cs *ChannelService) sendMsgByGroup(route string, msg map[string]interface{}, groups map[string][]string) {
+	seelog.Debugf("<%v> channelService sendMsgByGroup with route<%v> msg<%v> groups<%v>", cs.ctx.GetServerID(), route, msg, groups)
+
+	args := make(map[string]interface{})
+
+	args["route"] = route
+	args["msg"] = msg
+
+	coChanRpcS, ok := context.GetContext().GetComponent("cochannelrpcserver").(*cochannelrpcserver.CoChannelRpcServer)
+	if ok == false {
+		seelog.Error("Fail to get CoChannelRpcServer")
+		return
+	}
 
 	sendMsg := func(serverid string) {
 		if cs.ctx.GetServerID() == serverid {
 			//TODO:直接调用channelRpcServer相关方法,无需rpc
+			if err := coChanRpcS.PushMessage(args, nil); err != nil {
+				seelog.Errorf("Fail to invoke PushMessage to send msg,error<%v>", err.Error())
+				return
+			}
+
 		} else {
 			//TODO:发起rpc调用.
+			if err := cs.coRpcClient.RpcCall(serverid, "ChannelRpcServer.PushMessage", args, nil); err != nil {
+				seelog.Errorf("<%v> fail to invoke rpc PushMessage error<%v>", context.GetContext().GetServerID(), err.Error())
+				return
+			}
 		}
 	}
 
-	for _, value := range groups {
+	for frontendID, uids := range groups {
 		//TODO:逐个发送msg.
+		seelog.Infof("<%v> PushMessage to uids<%v> connected to frontend<%v>", context.GetContext().GetServerID(), uids, frontendID)
+		args["uid"] = uids
+		sendMsg(frontendID)
 	}
 }
 

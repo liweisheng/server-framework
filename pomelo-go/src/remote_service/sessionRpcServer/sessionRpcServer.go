@@ -1,3 +1,13 @@
+/**
+ * author:liweisheng date:2015/07/24
+ */
+
+/**
+ * sessionRpcServer包与包backendSessionService相对等，相当于rpc服务的服务端与客户端，backendSessionService
+ * 发起rpc调用请求sessionRpcService服务，将对backendsession的改变影响到前端服务器的session.
+ *
+ * sessionRpcServer内部想象session的操作都是用过组建cosession实现的.
+ */
 package sessionRpcServer
 
 import (
@@ -11,17 +21,17 @@ type SessionRpcServer struct {
 	sessionService *cosession.CoSession
 }
 
-func Start() {
+func (srs *SessionRpcServer) Start() {
 	ctx := context.GetContext()
-	coRpcS, ok := ctx.GetComponent("corpcserver").(corpcserver.CoRpcServer)
+	coRpcS, ok := ctx.GetComponent("corpcserver").(*corpcserver.CoRpcServer)
 
-	if ok == true {
-		seelog.Info("SessionRpcServer start")
-		srs := NewSessionRpcServer()
-		coRpcS.RegisteService(srs)
-	} else {
-		seelog.Error("SessionRpcServer failed to start")
+	if ok == false {
+		coRpcS = corpcserver.NewCoRpcServer()
 	}
+
+	seelog.Info("SessionRpcServer start,registe service to rpc server")
+	// srs := NewSessionRpcServer()
+	coRpcS.RegisteService(srs)
 }
 
 func NewSessionRpcServer() *SessionRpcServer {
@@ -30,12 +40,17 @@ func NewSessionRpcServer() *SessionRpcServer {
 	sessionService, ok := ctx.GetComponent("cosession").(*cosession.CoSession)
 
 	if ok == false || sessionService == nil {
-		sessionService = cosession.NewCoSession(ctx)
+		sessionService = cosession.NewCoSession()
 	}
 
 	return &SessionRpcServer{sessionService}
 }
 
+/// rpc服务端操作，通过session id返回前端session的详细信息.
+///
+/// @param sid session id
+/// @param reply 返回给rpc调用端，name->value形式存放,存放信息包括,sid:session id, uid:用户id,frontendid:前端服务器id,opts:设置的属性
+/// @return nil
 func (srs *SessionRpcServer) GetSessionBySID(sid uint32, reply *map[string]interface{}) error {
 
 	seelog.Debugf("SessionRpcServer method<GetSessionBySID> is invoked with sid<%v>", sid)
@@ -52,6 +67,10 @@ func (srs *SessionRpcServer) GetSessionBySID(sid uint32, reply *map[string]inter
 	return nil
 }
 
+/// 通过用户id返回用户id绑定的所有session(如果容许同一个用户id绑定多次，则存在多个session)
+///
+/// @param uid 用户id
+/// @param reply 返回给rpc 客户端的结果，有多个session组成的数组，每个数组元素以name->value形式存放.
 func (srs *SessionRpcServer) GetSessionsByUID(uid string, reply *[]map[string]interface{}) error {
 	seelog.Debugf("SessionRpcServer method<GetSessionByUID> is invoked with uid<%v>", uid)
 
@@ -74,6 +93,11 @@ func (srs *SessionRpcServer) GetSessionsByUID(uid string, reply *[]map[string]in
 	return nil
 }
 
+/// rpc服务端操作,通过制定session id踢除用户.
+///
+/// @param args args[0]表示sessionid{uint32} ，args[1]表示reason{string}
+/// @param reply 无实际意义参数，rpc客户端传来的nil
+/// @return nil
 func (srs *SessionRpcServer) KickBySID(args []interface{}, reply interface{}) error {
 
 	sid, _ := args[0].(uint32)
@@ -85,6 +109,10 @@ func (srs *SessionRpcServer) KickBySID(args []interface{}, reply interface{}) er
 	return nil
 }
 
+/// rpc服务端操作，通过用户id踢出用户.
+/// @param args args[0]{string}用户id, args[1]{string} reason
+/// @param reply nil
+/// @return nil
 func (srs *SessionRpcServer) KickByUID(args []string, reply interface{}) error {
 
 	uid := args[0]
@@ -97,6 +125,11 @@ func (srs *SessionRpcServer) KickByUID(args []string, reply interface{}) error {
 	return nil
 }
 
+/// rpc服务端操作, 将用户id与session id绑定.
+///
+/// @param args arg[0]{uint32} sessionid, args[1]{string}用户id
+/// @param reply 当前rpc客户端传过来的nil
+/// @return nil
 func (srs *SessionRpcServer) BindUID(args []interface{}, reply interface{}) error {
 
 	sid, _ := args[0].(uint32)
@@ -109,6 +142,11 @@ func (srs *SessionRpcServer) BindUID(args []interface{}, reply interface{}) erro
 	return nil
 }
 
+/// rpc服务端操作， 将用户id与session id解绑定.
+///
+/// @param args args[0]{uint32} sessionid, args[1] {string} 用户id
+/// @param reply 当前rpc客户端传过来为nil
+/// @return nil
 func (srs *SessionRpcServer) UnbindUID(args []interface{}, reply interface{}) error {
 	sid, _ := args[0].(uint32)
 	uid, _ := args[1].(string)
@@ -120,6 +158,11 @@ func (srs *SessionRpcServer) UnbindUID(args []interface{}, reply interface{}) er
 	return nil
 }
 
+/// rpc服务端操作，设置用户的属性.
+///
+/// @param args args["sid"]{uint32}session id， args["key"]属性名，args["value"]{interface{}}属性值
+/// @param reply rpc客户端传递多来为nil
+/// @return nil
 func (srs *SessionRpcServer) PushOpt(args map[string]interface{}, reply interface{}) error {
 
 	sid, _ := args["sid"].(uint32)
@@ -133,6 +176,11 @@ func (srs *SessionRpcServer) PushOpt(args map[string]interface{}, reply interfac
 	return nil
 }
 
+/// rpc服务端操作,类似PushOpt, 可以同时设置多个属性.
+///
+/// @param args["sid"]{uint32} sessionid，args["setting"] {map[string]interface{}}多个属性的key->value映射.
+/// @param reply rpc客户端传递过来为nil
+/// @return nil
 func (srs *SessionRpcServer) PushAllOpts(args map[string]interface{}, reply interface{}) error {
 
 	sid, _ := args["sid"].(uint32)

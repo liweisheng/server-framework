@@ -90,6 +90,14 @@ func (ctx *Context) GetServerID() string {
 	return ctx.CurrentServer["id"].(string)
 }
 
+func (ctx *Context) GetServerType() string {
+	return ctx.CurrentServer["serverType"].(string)
+}
+
+func (ctx *Context) GetCurrentServerInfo() map[string]interface{} {
+	return ctx.CurrentServer
+}
+
 /// 根据server id获得server的详细信息.
 ///
 /// @param id server id
@@ -97,4 +105,13 @@ func (ctx *Context) GetServerID() string {
 /// XXX: 当前实现只是为了测试.
 func (ctx *Context) GetServerInfoByID(id string) map[string]interface{} {
 	return ctx.CurrentServer
+}
+
+/// 根据服务器类型获得server id,获得server id可以配置route规则，来从多个同类型服务器中
+/// 选择要返回的server id.
+/// @param stype 服务器类型.
+/// @return server id
+/// TODO: 未实现.
+func (ctx *Context) GetServerIDByType(stype string) string {
+	return ""
 }
