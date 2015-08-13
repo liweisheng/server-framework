@@ -55,7 +55,6 @@ func newContext() *Context {
 		fmt.Fprintf(os.Stderr, "Error: Fail to use logger,error message:<%v>\n", err.Error())
 		os.Exit(1)
 	}
-
 	return &Context{ch, "", mods, nil, curS, masterInfo, serverInfo, allOpts, defaultComponents, logger}
 }
 

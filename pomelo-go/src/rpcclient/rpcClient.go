@@ -10,6 +10,7 @@ package rpcclient
 
 import (
 	"context"
+	"errors"
 	"fmt"
 	seelog "github.com/cihub/seelog"
 
@@ -23,6 +24,10 @@ type RpcClient struct {
 
 func NewRpcClient(ctx *context.Context) *RpcClient {
 	return &RpcClient{ctx}
+}
+
+func (rc *RpcClient) Start() {
+	seelog.Infof("server<%v> start RpcClient", rc.ctx.GetServerID())
 }
 
 /// 发起远程调用.
@@ -41,10 +46,11 @@ func (rc *RpcClient) RpcCall(serverID string, method string, args interface{}, r
 	hostPort := fmt.Sprintf("%v:%v", host, port)
 
 	client, err := jsonrpc.Dial("tcp", hostPort)
-
+	v, _ := reply.(*map[string]interface{})
+	fmt.Printf("*reply is nil:%v\n", nil == v || nil == (*v))
 	if err != nil {
 		seelog.Errorf("Fail to Dial rpc server,error message:%v", err.Error())
-		return nil
+		return errors.New("Fail to Dial rpc server")
 	}
 
 	/// BUG：以下全是BUG

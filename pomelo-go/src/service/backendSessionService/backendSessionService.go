@@ -35,6 +35,10 @@ func NewBackendSessionService(ctx *context.Context) *BackendSessionService {
 	return &BackendSessionService{rpcClient}
 }
 
+func (bss *BackendSessionService) Start() {
+	seelog.Infof("server<%v> start BackendSessionService", context.GetContext().GetServerID())
+}
+
 /// 创建新的BackendSession.
 func (bss *BackendSessionService) CreateBackendSession(opts map[string]interface{}) *BackendSession {
 	return newBackendSession(opts, bss)
@@ -249,7 +253,22 @@ type BackendSession struct {
 /// @param opts BackendSession选项
 /// @param backendSessionService 管理BackendSession的BackendSessionService,及创建BackendSession者.
 func newBackendSession(opts map[string]interface{}, backendSessionService *BackendSessionService) *BackendSession {
+	if nil == opts {
+		opts = make(map[string]interface{})
+	}
 	return &BackendSession{"", "", 0, backendSessionService, opts}
+}
+
+func (bs *BackendSession) GetFrontendID() string {
+	return bs.frontendID
+}
+
+func (bs *BackendSession) GetUID() string {
+	return bs.uid
+}
+
+func (bs *BackendSession) GetID() uint32 {
+	return bs.id
 }
 
 func (bs *BackendSession) BindUID(uid string) {

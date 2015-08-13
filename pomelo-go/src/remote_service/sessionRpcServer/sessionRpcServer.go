@@ -14,6 +14,7 @@ import (
 	"component/corpcserver"
 	"component/cosession"
 	"context"
+	"fmt"
 	seelog "github.com/cihub/seelog"
 )
 
@@ -29,7 +30,7 @@ func (srs *SessionRpcServer) Start() {
 		coRpcS = corpcserver.NewCoRpcServer()
 	}
 
-	seelog.Info("SessionRpcServer start,registe service to rpc server")
+	seelog.Infof("frontendserver<%v> SessionRpcServer start,registe service to rpc server", ctx.GetServerID())
 	// srs := NewSessionRpcServer()
 	coRpcS.RegisteService(srs)
 }
@@ -53,10 +54,15 @@ func NewSessionRpcServer() *SessionRpcServer {
 /// @return nil
 func (srs *SessionRpcServer) GetSessionBySID(sid uint32, reply *map[string]interface{}) error {
 
+	fmt.Println("In GetSessionBySID")
+	fmt.Printf("SessionRpcServer method<GetSessionBySID> is invoked with sid<%v>\n", sid)
 	seelog.Debugf("SessionRpcServer method<GetSessionBySID> is invoked with sid<%v>", sid)
 	session := srs.sessionService.GetSessionByID(sid)
-
-	if session != nil {
+	if (*reply) == nil {
+		fmt.Println("reply is nil")
+		return fmt.Errorf("reply error")
+	}
+	if session != nil && reply != nil {
 		(*reply)["sid"] = sid
 		(*reply)["uid"] = session.Uid
 		(*reply)["frontendid"] = session.FrontendID

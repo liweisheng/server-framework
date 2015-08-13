@@ -45,7 +45,8 @@ func NewSessionService(opts map[string]interface{}) *SessionService {
 	}
 	sessions := make(map[uint32]*Session)
 	uidmap := make(map[string][]*Session)
-	multibind := (opts["multiBind"].(string) != "")
+
+	multibind := opts["multiBind"] != nil && (opts["multiBind"].(string) != "")
 	rwMutexS := new(sync.RWMutex)
 	rwMutexUM := new(sync.RWMutex)
 	return &SessionService{sessions, uidmap, multibind, opts, rwMutexS, rwMutexUM}
@@ -76,16 +77,17 @@ func (ss *SessionService) BindUID(uid string, sid uint32) error {
 	session := ss.sessions[sid]
 	ss.rwMutexS.RUnlock()
 	if nil == session {
-		fmt.Fprintf(os.Stderr, "Error: Failed to find session with sid<%v>\n", sid)
+		seelog.Errorf("Failed to find session with sid<%v>\n", sid)
 		return fmt.Errorf("Error: Failed to find session with sid<%v>\n", sid)
 	}
 
 	if session.Uid != "" {
 		if session.Uid == uid {
 			//session已经绑定的相同的uid,返回
+			seelog.Infof("frontendserver<%v>  sid<%v> has already binded with uid<%v>", session.FrontendID, sid, uid)
 			return nil
 		} else {
-			fmt.Fprintf(os.Stderr, "Error: session with sid<%v> has already bound with uid<%v>\n", sid, uid)
+			seelog.Errorf("frontendserver<%v> session with sid<%v> has already bound with uid<%v>", session.FrontendID, sid, uid)
 			return fmt.Errorf("Error: session with sid<%v> has already bound with uid<%v>\n", sid, uid)
 		}
 	}
@@ -96,7 +98,7 @@ func (ss *SessionService) BindUID(uid string, sid uint32) error {
 	sessions, ok := ss.uidMap[uid]
 	if ss.multiBind == false && ok {
 		//multiBind == false禁止同一个uid绑定到多个session
-		fmt.Fprintf(os.Stderr, "Error: single uid can not be binded to multi sessions\n")
+		seelog.Errorf("uid can not be binded to multi sessions")
 		return fmt.Errorf("Error: single uid can not be binded to multi sessions\n")
 	}
 

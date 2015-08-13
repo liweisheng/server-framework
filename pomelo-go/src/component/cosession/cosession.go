@@ -34,3 +34,8 @@ func NewCoSession() *CoSession {
 	seelog.Info("CoSession create successufully")
 	return cosess
 }
+
+func (cs *CoSession) Start() {
+	ctx := context.GetContext()
+	seelog.Infof("frontendserver<%v> cosession start", ctx.GetServerID())
+}
