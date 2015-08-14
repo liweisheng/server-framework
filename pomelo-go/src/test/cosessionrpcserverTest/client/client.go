@@ -35,9 +35,47 @@ func main() {
 	backendS := cobackendS.GetBackendSessionBySID("connector-1", 1)
 
 	if backendS != nil {
-		fmt.Printf("frontendif:%v sid:%v  uid:%v", backendS.GetFrontendID(), backendS.GetID(), backendS.GetUID())
+		fmt.Printf("--------------GetBackendSessionBySID(%v,%v)--------------\n", "connector-1", 1)
+		fmt.Printf("frontendid:%v sid:%v  uid:%v\n", backendS.GetFrontendID(), backendS.GetID(), backendS.GetUID())
+		fmt.Println("---------------------------------------------------------\n")
+
+		backendS.UnbindUID(backendS.GetUID())
+		fmt.Printf("--------------UnBindUID(%v)--------------\n", backendS.GetUID())
+		backendSN := cobackendS.GetBackendSessionBySID("connector-1", 1)
+
+		if backendSN != nil {
+			fmt.Printf("--------------After UnBindUID(%v)--------------\n", backendS.GetUID())
+			fmt.Printf("frontendid:%v sid:%v  uid:%v\n", backendSN.GetFrontendID(), backendSN.GetID(), backendSN.GetUID())
+			fmt.Println("-----------------------------------------------------\n")
+		}
+
+		backendS.SetOpt("age", 12)
+		fmt.Printf("--------------SetOpt(%v,%v)--------------\n", "age", 12)
+		backendS.PushOpt("age")
+		fmt.Printf("--------------PushOpt(%v)--------------\n", "age")
 	}
 
-	ch := make(chan int)
-	<-ch
+	backendS = cobackendS.GetBackendSessionBySID("connector-1", 1)
+
+	if backendS != nil {
+		fmt.Printf("--------------GetBackendSessionBySID(%v,%v)--------------\n", "connector-1", backendS.GetID())
+		fmt.Printf("frontendid:%v sid:%v  uid:%v,opts:%v\n", backendS.GetFrontendID(), backendS.GetID(), backendS.GetUID(), backendS.GetOpts())
+		fmt.Println("--------------------------------------------------------------\n")
+	}
+
+	infoByUID := cobackendS.GetBackendSessionsByUID("connector-1", "Li Si")
+	if infoByUID != nil {
+		fmt.Printf("--------------GetBackendSessionSByUID(%v,%v)--------------\n", "connector-1", "Li Si")
+		for _, elem := range infoByUID {
+			fmt.Printf("frontend id:%v,id:%v,uid:%v \n", elem.GetFrontendID(), elem.GetID(), elem.GetUID())
+		}
+		fmt.Println("---------------------------------------------------\n")
+	}
+
+	cobackendS.KickBySID("connector-1", 1, "no reason")
+	fmt.Printf("--------------KickBySID(%v,%v,%v)--------------\n", "connector-1", 1, "no reason")
+	backendK := cobackendS.GetBackendSessionBySID("connector-1", 1)
+	if backendK == nil {
+		fmt.Printf("--------------After Kick sid<%v>,session not exists--------------\n\n", 1)
+	}
 }

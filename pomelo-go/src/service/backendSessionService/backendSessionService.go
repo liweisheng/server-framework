@@ -17,6 +17,7 @@ package backendSessionService
 import (
 	"component/corpcclient"
 	"context"
+
 	seelog "github.com/cihub/seelog"
 )
 
@@ -54,25 +55,26 @@ func (bss *BackendSessionService) GetBackendSessionBySID(frontendid string, sid 
 
 	reply := make(map[string]interface{})
 	method := "SessionRpcServer.GetSessionBySID"
-	err := bss.rpcCient.RpcCall(frontendid, method, sid, &reply)
+	err := bss.rpcCient.RpcCall(frontendid, method, &sid, &reply)
 
 	if err == nil {
 		// <-rpcRelpy.Done
 
-		if reply == nil {
+		if reply == nil || len(reply) == 0 {
 			return nil
 		}
 		opts, _ := reply["opts"].(map[string]interface{})
 
 		backendSession := bss.CreateBackendSession(opts)
 		backendSession.uid = reply["uid"].(string)
-		backendSession.id = reply["sid"].(uint32)
+		backendSession.id = uint32(reply["sid"].(float64))
 		backendSession.frontendID = reply["frontendid"].(string)
 
 		seelog.Debugf("Receive from rpc server<%v>", reply)
 		return backendSession
 	} else {
-		seelog.Error("Rpc Call failed")
+
+		seelog.Errorf("Rpc Call failed,error<%v>", err.Error())
 		return nil
 	}
 }
@@ -105,7 +107,8 @@ func (bss *BackendSessionService) GetBackendSessionsByUID(frontendid string, uid
 			bs := bss.CreateBackendSession(opts)
 
 			bs.uid, _ = elem["uid"].(string)
-			bs.id, _ = elem["sid"].(uint32)
+			id, _ := elem["sid"].(float64)
+			bs.id = uint32(id)
 			bs.frontendID, _ = elem["frontendid"].(string)
 			backendSessions = append(backendSessions, bs)
 		}
@@ -174,7 +177,7 @@ func (bss *BackendSessionService) BindUID(frontendid string, sid uint32, uid str
 
 	method := "SessionRpcServer.BindUID"
 
-	if err := bss.rpcCient.RpcCall(frontendid, method, args, nil); err != nil {
+	if err := bss.rpcCient.RpcCall(frontendid, method, &args, nil); err != nil {
 
 		seelog.Errorf("<%v> BindUID uid<%v> with sid<%v> error<%v>", context.GetContext().GetServerID(), uid, sid, err.Error())
 	}
@@ -195,7 +198,7 @@ func (bss *BackendSessionService) UnbindUID(frontendid string, sid uint32, uid s
 
 	method := "SessionRpcServer.UnbindUID"
 
-	if err := bss.rpcCient.RpcCall(frontendid, method, args, nil); err != nil {
+	if err := bss.rpcCient.RpcCall(frontendid, method, &args, nil); err != nil {
 
 		seelog.Errorf("<%v> UnbindUID uid<%v>  with sid<%v> error<%v>", context.GetContext().GetServerID(), uid, sid, err.Error())
 	}
@@ -218,7 +221,7 @@ func (bss *BackendSessionService) PushOpt(frontendid string, sid uint32, key str
 
 	method := "SessionRpcServer.PushOpt"
 
-	if err := bss.rpcCient.RpcCall(frontendid, method, args, nil); err != nil {
+	if err := bss.rpcCient.RpcCall(frontendid, method, &args, nil); err != nil {
 
 		seelog.Errorf("<%v> PushOpt with sid<%v> to frontend<%v> error<%v>", context.GetContext().GetServerID(), sid, frontendid, err.Error())
 	}
@@ -235,7 +238,7 @@ func (bss *BackendSessionService) PushAllOpts(frontendid string, sid uint32, set
 
 	method := "SessionRpcServer.PushAllOpts"
 
-	if err := bss.rpcCient.RpcCall(frontendid, method, args, nil); err != nil {
+	if err := bss.rpcCient.RpcCall(frontendid, method, &args, nil); err != nil {
 		seelog.Errorf("<%v> PushAllOpts with sid<%v> to frontend<%v> error<%v>", context.GetContext().GetServerID(), sid, frontendid, err.Error())
 	}
 }
@@ -269,6 +272,10 @@ func (bs *BackendSession) GetUID() string {
 
 func (bs *BackendSession) GetID() uint32 {
 	return bs.id
+}
+
+func (bs *BackendSession) GetOpts() map[string]interface{} {
+	return bs.opts
 }
 
 func (bs *BackendSession) BindUID(uid string) {

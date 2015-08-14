@@ -1,0 +1,1006 @@
+[Info] sessionService.go 52 [2015-08-13 21:21:55] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  frontendserver<connector-1> create sessionservice with opts<map[multiBind:yes]> 
+[Trace] context.go 68 [2015-08-13 21:21:55] H:/pomelo-go/pomelo-go/src/context/context.go  Registe component <cosession> 
+[Info] cosession.go 34 [2015-08-13 21:21:55] H:/pomelo-go/pomelo-go/src/component/cosession/cosession.go  CoSession create successufully 
+[Trace] context.go 68 [2015-08-13 21:21:55] H:/pomelo-go/pomelo-go/src/context/context.go  Registe component <cosessionrpcserver> 
+[Trace] context.go 68 [2015-08-13 21:21:55] H:/pomelo-go/pomelo-go/src/context/context.go  Registe component <corpcserver> 
+[Info] corpcserver.go 27 [2015-08-13 21:21:55] H:/pomelo-go/pomelo-go/src/component/corpcserver/corpcserver.go  CoRpcServer create successfully 
+[Info] cosession.go 40 [2015-08-13 21:21:55] H:/pomelo-go/pomelo-go/src/component/cosession/cosession.go  frontendserver<connector-1> cosession start 
+[Info] sessionRpcServer.go 35 [2015-08-13 21:21:55] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  frontendserver<connector-1> SessionRpcServer start,registe service to rpc server 
+[Debug] sessionService.go 63 [2015-08-13 21:21:55] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<1> 
+[Debug] sessionService.go 63 [2015-08-13 21:21:55] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<2> 
+[Debug] sessionService.go 63 [2015-08-13 21:21:55] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<3> 
+[Info] rpcServer.go 44 [2015-08-13 21:21:55] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  RpcServer start... 
+[Debug] rpcServer.go 61 [2015-08-13 21:21:55] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server listening: <127.0.0.1:8888> 
+[Debug] rpcServer.go 67 [2015-08-13 21:21:56] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 21:21:59] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 21:21:59] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820a6158> 
+[Debug] rpcServer.go 67 [2015-08-13 21:21:59] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 160 [2015-08-13 21:21:59] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<UnbindUID> is invoked with sid<1> uid<Zhang San> 
+[Debug] rpcServer.go 67 [2015-08-13 21:21:59] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 21:21:59] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820a6770> 
+[Debug] rpcServer.go 67 [2015-08-13 21:21:59] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 81 [2015-08-13 21:21:59] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionByUID> is invoked with uid<Li Si> 
+[Debug] rpcServer.go 67 [2015-08-13 21:22:06] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 21:22:16] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 21:22:19] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 21:22:19] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820a6fd8> 
+[Debug] rpcServer.go 67 [2015-08-13 21:22:19] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 160 [2015-08-13 21:22:19] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<UnbindUID> is invoked with sid<1> uid<> 
+[Debug] rpcServer.go 67 [2015-08-13 21:22:19] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 21:22:19] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820a74f0> 
+[Debug] rpcServer.go 67 [2015-08-13 21:22:19] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 81 [2015-08-13 21:22:19] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionByUID> is invoked with uid<Li Si> 
+[Debug] rpcServer.go 67 [2015-08-13 21:22:26] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 21:22:36] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 21:22:46] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 21:22:56] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 21:23:06] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 21:23:16] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 21:23:26] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 21:23:36] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 21:23:46] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 21:23:56] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 21:24:06] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 21:24:16] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 21:24:26] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 21:24:36] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 21:24:46] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 21:24:56] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 21:25:06] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 21:25:16] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 21:25:26] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 21:25:36] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 21:25:46] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 21:25:56] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 21:26:06] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 21:26:16] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 21:26:26] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 21:26:36] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 21:26:46] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 21:26:56] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 21:27:06] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 21:27:16] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 21:27:26] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 21:27:36] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 21:27:46] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 21:27:56] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 21:28:06] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 21:28:16] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 21:28:26] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 21:28:36] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 21:28:46] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 21:28:56] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 21:29:06] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 21:29:10] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 21:29:10] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820e6670> 
+[Debug] rpcServer.go 67 [2015-08-13 21:29:10] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 160 [2015-08-13 21:29:10] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<UnbindUID> is invoked with sid<1> uid<> 
+[Debug] rpcServer.go 67 [2015-08-13 21:29:10] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 21:29:10] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820e6b88> 
+[Debug] rpcServer.go 67 [2015-08-13 21:29:10] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 81 [2015-08-13 21:29:10] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionByUID> is invoked with uid<Li Si> 
+[Debug] rpcServer.go 67 [2015-08-13 21:29:16] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 21:29:26] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 21:29:26] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 21:29:26] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820e7398> 
+[Debug] rpcServer.go 67 [2015-08-13 21:29:26] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 160 [2015-08-13 21:29:26] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<UnbindUID> is invoked with sid<1> uid<> 
+[Debug] rpcServer.go 67 [2015-08-13 21:29:26] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 21:29:26] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820e78a0> 
+[Debug] rpcServer.go 67 [2015-08-13 21:29:26] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 81 [2015-08-13 21:29:26] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionByUID> is invoked with uid<Li Si> 
+[Debug] rpcServer.go 67 [2015-08-13 21:29:36] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 21:29:46] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 21:29:56] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Info] sessionService.go 52 [2015-08-13 21:30:12] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  frontendserver<connector-1> create sessionservice with opts<map[multiBind:yes]> 
+[Trace] context.go 68 [2015-08-13 21:30:12] H:/pomelo-go/pomelo-go/src/context/context.go  Registe component <cosession> 
+[Info] cosession.go 34 [2015-08-13 21:30:12] H:/pomelo-go/pomelo-go/src/component/cosession/cosession.go  CoSession create successufully 
+[Trace] context.go 68 [2015-08-13 21:30:12] H:/pomelo-go/pomelo-go/src/context/context.go  Registe component <cosessionrpcserver> 
+[Trace] context.go 68 [2015-08-13 21:30:12] H:/pomelo-go/pomelo-go/src/context/context.go  Registe component <corpcserver> 
+[Info] corpcserver.go 27 [2015-08-13 21:30:12] H:/pomelo-go/pomelo-go/src/component/corpcserver/corpcserver.go  CoRpcServer create successfully 
+[Info] cosession.go 40 [2015-08-13 21:30:12] H:/pomelo-go/pomelo-go/src/component/cosession/cosession.go  frontendserver<connector-1> cosession start 
+[Info] sessionRpcServer.go 35 [2015-08-13 21:30:12] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  frontendserver<connector-1> SessionRpcServer start,registe service to rpc server 
+[Debug] sessionService.go 63 [2015-08-13 21:30:12] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<1> 
+[Debug] sessionService.go 63 [2015-08-13 21:30:12] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<2> 
+[Debug] sessionService.go 63 [2015-08-13 21:30:12] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<3> 
+[Debug] sessionService.go 63 [2015-08-13 21:30:12] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<4> 
+[Info] rpcServer.go 44 [2015-08-13 21:30:12] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  RpcServer start... 
+[Debug] rpcServer.go 61 [2015-08-13 21:30:12] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server listening: <127.0.0.1:8888> 
+[Debug] rpcServer.go 67 [2015-08-13 21:30:17] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 21:30:19] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 21:30:19] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820a4208> 
+[Debug] rpcServer.go 67 [2015-08-13 21:30:19] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 160 [2015-08-13 21:30:19] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<UnbindUID> is invoked with sid<1> uid<Zhang San> 
+[Debug] rpcServer.go 67 [2015-08-13 21:30:19] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 21:30:19] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820a4820> 
+[Debug] rpcServer.go 67 [2015-08-13 21:30:19] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 81 [2015-08-13 21:30:19] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionByUID> is invoked with uid<Li Si> 
+[Debug] rpcServer.go 67 [2015-08-13 21:30:27] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 21:30:37] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 21:30:46] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 21:30:46] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820a5068> 
+[Debug] rpcServer.go 67 [2015-08-13 21:30:46] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 160 [2015-08-13 21:30:46] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<UnbindUID> is invoked with sid<1> uid<> 
+[Debug] rpcServer.go 67 [2015-08-13 21:30:46] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 21:30:46] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820a5570> 
+[Debug] rpcServer.go 67 [2015-08-13 21:30:46] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 81 [2015-08-13 21:30:46] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionByUID> is invoked with uid<Li Si> 
+[Debug] rpcServer.go 67 [2015-08-13 21:30:47] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 21:30:57] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 21:31:07] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 21:31:17] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 21:31:27] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 21:31:37] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 21:31:47] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 21:31:57] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 21:32:07] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Info] sessionService.go 52 [2015-08-13 21:34:30] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  frontendserver<connector-1> create sessionservice with opts<map[multiBind:yes]> 
+[Trace] context.go 68 [2015-08-13 21:34:30] H:/pomelo-go/pomelo-go/src/context/context.go  Registe component <cosession> 
+[Info] cosession.go 34 [2015-08-13 21:34:30] H:/pomelo-go/pomelo-go/src/component/cosession/cosession.go  CoSession create successufully 
+[Trace] context.go 68 [2015-08-13 21:34:30] H:/pomelo-go/pomelo-go/src/context/context.go  Registe component <cosessionrpcserver> 
+[Trace] context.go 68 [2015-08-13 21:34:30] H:/pomelo-go/pomelo-go/src/context/context.go  Registe component <corpcserver> 
+[Info] corpcserver.go 27 [2015-08-13 21:34:30] H:/pomelo-go/pomelo-go/src/component/corpcserver/corpcserver.go  CoRpcServer create successfully 
+[Info] cosession.go 40 [2015-08-13 21:34:30] H:/pomelo-go/pomelo-go/src/component/cosession/cosession.go  frontendserver<connector-1> cosession start 
+[Info] sessionRpcServer.go 35 [2015-08-13 21:34:30] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  frontendserver<connector-1> SessionRpcServer start,registe service to rpc server 
+[Debug] sessionService.go 63 [2015-08-13 21:34:30] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<1> 
+[Debug] sessionService.go 63 [2015-08-13 21:34:30] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<2> 
+[Debug] sessionService.go 63 [2015-08-13 21:34:30] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<3> 
+[Debug] sessionService.go 63 [2015-08-13 21:34:30] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<4> 
+[Info] rpcServer.go 44 [2015-08-13 21:34:30] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  RpcServer start... 
+[Debug] rpcServer.go 61 [2015-08-13 21:34:30] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server listening: <127.0.0.1:8888> 
+[Debug] rpcServer.go 67 [2015-08-13 21:34:40] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 21:34:50] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Info] sessionService.go 52 [2015-08-13 21:39:21] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  frontendserver<connector-1> create sessionservice with opts<map[multiBind:yes]> 
+[Trace] context.go 68 [2015-08-13 21:39:21] H:/pomelo-go/pomelo-go/src/context/context.go  Registe component <cosession> 
+[Info] cosession.go 34 [2015-08-13 21:39:21] H:/pomelo-go/pomelo-go/src/component/cosession/cosession.go  CoSession create successufully 
+[Trace] context.go 68 [2015-08-13 21:39:21] H:/pomelo-go/pomelo-go/src/context/context.go  Registe component <cosessionrpcserver> 
+[Trace] context.go 68 [2015-08-13 21:39:23] H:/pomelo-go/pomelo-go/src/context/context.go  Registe component <corpcserver> 
+[Info] corpcserver.go 27 [2015-08-13 21:39:23] H:/pomelo-go/pomelo-go/src/component/corpcserver/corpcserver.go  CoRpcServer create successfully 
+[Info] cosession.go 40 [2015-08-13 21:39:23] H:/pomelo-go/pomelo-go/src/component/cosession/cosession.go  frontendserver<connector-1> cosession start 
+[Info] sessionRpcServer.go 35 [2015-08-13 21:39:23] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  frontendserver<connector-1> SessionRpcServer start,registe service to rpc server 
+[Debug] sessionService.go 63 [2015-08-13 21:39:26] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<1> 
+[Debug] sessionService.go 63 [2015-08-13 21:39:27] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<2> 
+[Debug] sessionService.go 63 [2015-08-13 21:39:29] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<3> 
+[Info] rpcServer.go 44 [2015-08-13 21:39:48] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  RpcServer start... 
+[Debug] sessionService.go 63 [2015-08-13 21:39:48] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<4> 
+[Debug] rpcServer.go 61 [2015-08-13 21:39:48] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server listening: <127.0.0.1:8888> 
+[Debug] rpcServer.go 67 [2015-08-13 21:39:57] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 21:40:07] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 21:40:17] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 21:40:27] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 21:40:37] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Info] sessionService.go 52 [2015-08-13 21:41:29] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  frontendserver<connector-1> create sessionservice with opts<map[multiBind:yes]> 
+[Trace] context.go 68 [2015-08-13 21:41:29] H:/pomelo-go/pomelo-go/src/context/context.go  Registe component <cosession> 
+[Info] cosession.go 34 [2015-08-13 21:41:29] H:/pomelo-go/pomelo-go/src/component/cosession/cosession.go  CoSession create successufully 
+[Trace] context.go 68 [2015-08-13 21:41:29] H:/pomelo-go/pomelo-go/src/context/context.go  Registe component <cosessionrpcserver> 
+[Trace] context.go 68 [2015-08-13 21:41:29] H:/pomelo-go/pomelo-go/src/context/context.go  Registe component <corpcserver> 
+[Info] corpcserver.go 27 [2015-08-13 21:41:29] H:/pomelo-go/pomelo-go/src/component/corpcserver/corpcserver.go  CoRpcServer create successfully 
+[Info] cosession.go 40 [2015-08-13 21:41:29] H:/pomelo-go/pomelo-go/src/component/cosession/cosession.go  frontendserver<connector-1> cosession start 
+[Info] sessionRpcServer.go 35 [2015-08-13 21:41:29] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  frontendserver<connector-1> SessionRpcServer start,registe service to rpc server 
+[Debug] sessionService.go 63 [2015-08-13 21:41:29] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<1> 
+[Debug] sessionService.go 63 [2015-08-13 21:41:29] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<2> 
+[Debug] sessionService.go 63 [2015-08-13 21:41:29] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<3> 
+[Debug] sessionService.go 63 [2015-08-13 21:41:29] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<4> 
+[Info] rpcServer.go 44 [2015-08-13 21:41:29] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  RpcServer start... 
+[Debug] rpcServer.go 61 [2015-08-13 21:41:29] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server listening: <127.0.0.1:8888> 
+[Debug] rpcServer.go 67 [2015-08-13 21:41:31] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Info] sessionService.go 52 [2015-08-13 21:41:47] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  frontendserver<connector-1> create sessionservice with opts<map[multiBind:yes]> 
+[Trace] context.go 68 [2015-08-13 21:41:47] H:/pomelo-go/pomelo-go/src/context/context.go  Registe component <cosession> 
+[Info] cosession.go 34 [2015-08-13 21:41:47] H:/pomelo-go/pomelo-go/src/component/cosession/cosession.go  CoSession create successufully 
+[Trace] context.go 68 [2015-08-13 21:41:47] H:/pomelo-go/pomelo-go/src/context/context.go  Registe component <cosessionrpcserver> 
+[Trace] context.go 68 [2015-08-13 21:41:47] H:/pomelo-go/pomelo-go/src/context/context.go  Registe component <corpcserver> 
+[Info] corpcserver.go 27 [2015-08-13 21:41:47] H:/pomelo-go/pomelo-go/src/component/corpcserver/corpcserver.go  CoRpcServer create successfully 
+[Info] cosession.go 40 [2015-08-13 21:41:47] H:/pomelo-go/pomelo-go/src/component/cosession/cosession.go  frontendserver<connector-1> cosession start 
+[Info] sessionRpcServer.go 35 [2015-08-13 21:41:47] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  frontendserver<connector-1> SessionRpcServer start,registe service to rpc server 
+[Debug] sessionService.go 63 [2015-08-13 21:41:47] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<1> 
+[Debug] sessionService.go 63 [2015-08-13 21:41:47] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<2> 
+[Debug] sessionService.go 63 [2015-08-13 21:41:47] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<3> 
+[Debug] sessionService.go 63 [2015-08-13 21:41:47] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<4> 
+[Info] sessionService.go 52 [2015-08-13 21:42:04] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  frontendserver<connector-1> create sessionservice with opts<map[multiBind:yes]> 
+[Trace] context.go 68 [2015-08-13 21:42:04] H:/pomelo-go/pomelo-go/src/context/context.go  Registe component <cosession> 
+[Info] cosession.go 34 [2015-08-13 21:42:04] H:/pomelo-go/pomelo-go/src/component/cosession/cosession.go  CoSession create successufully 
+[Trace] context.go 68 [2015-08-13 21:42:04] H:/pomelo-go/pomelo-go/src/context/context.go  Registe component <cosessionrpcserver> 
+[Trace] context.go 68 [2015-08-13 21:42:04] H:/pomelo-go/pomelo-go/src/context/context.go  Registe component <corpcserver> 
+[Info] corpcserver.go 27 [2015-08-13 21:42:04] H:/pomelo-go/pomelo-go/src/component/corpcserver/corpcserver.go  CoRpcServer create successfully 
+[Info] cosession.go 40 [2015-08-13 21:42:04] H:/pomelo-go/pomelo-go/src/component/cosession/cosession.go  frontendserver<connector-1> cosession start 
+[Info] sessionRpcServer.go 35 [2015-08-13 21:42:04] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  frontendserver<connector-1> SessionRpcServer start,registe service to rpc server 
+[Debug] sessionService.go 63 [2015-08-13 21:42:04] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<1> 
+[Debug] sessionService.go 63 [2015-08-13 21:42:04] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<2> 
+[Debug] sessionService.go 63 [2015-08-13 21:42:04] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<3> 
+[Debug] sessionService.go 63 [2015-08-13 21:42:04] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<4> 
+[Info] rpcServer.go 44 [2015-08-13 21:42:04] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  RpcServer start... 
+[Debug] rpcServer.go 61 [2015-08-13 21:42:04] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server listening: <127.0.0.1:8888> 
+[Debug] rpcServer.go 67 [2015-08-13 21:42:10] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 21:42:10] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820a4138> 
+[Debug] rpcServer.go 67 [2015-08-13 21:42:10] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 160 [2015-08-13 21:42:10] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<UnbindUID> is invoked with sid<1> uid<Zhang San> 
+[Debug] rpcServer.go 67 [2015-08-13 21:42:10] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 21:42:10] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820a4750> 
+[Debug] rpcServer.go 67 [2015-08-13 21:42:10] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 81 [2015-08-13 21:42:10] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionByUID> is invoked with uid<Li Si> 
+[Debug] rpcServer.go 67 [2015-08-13 21:42:14] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Info] sessionService.go 52 [2015-08-13 22:03:52] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  frontendserver<connector-1> create sessionservice with opts<map[multiBind:yes]> 
+[Trace] context.go 68 [2015-08-13 22:03:52] H:/pomelo-go/pomelo-go/src/context/context.go  Registe component <cosession> 
+[Info] cosession.go 34 [2015-08-13 22:03:52] H:/pomelo-go/pomelo-go/src/component/cosession/cosession.go  CoSession create successufully 
+[Trace] context.go 68 [2015-08-13 22:03:52] H:/pomelo-go/pomelo-go/src/context/context.go  Registe component <cosessionrpcserver> 
+[Trace] context.go 68 [2015-08-13 22:03:52] H:/pomelo-go/pomelo-go/src/context/context.go  Registe component <corpcserver> 
+[Info] corpcserver.go 27 [2015-08-13 22:03:52] H:/pomelo-go/pomelo-go/src/component/corpcserver/corpcserver.go  CoRpcServer create successfully 
+[Info] cosession.go 40 [2015-08-13 22:03:52] H:/pomelo-go/pomelo-go/src/component/cosession/cosession.go  frontendserver<connector-1> cosession start 
+[Info] sessionRpcServer.go 35 [2015-08-13 22:03:52] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  frontendserver<connector-1> SessionRpcServer start,registe service to rpc server 
+[Debug] sessionService.go 63 [2015-08-13 22:03:52] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<1> 
+[Debug] sessionService.go 63 [2015-08-13 22:03:52] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<2> 
+[Debug] sessionService.go 63 [2015-08-13 22:03:52] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<3> 
+[Debug] sessionService.go 63 [2015-08-13 22:03:52] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<4> 
+[Info] rpcServer.go 44 [2015-08-13 22:03:52] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  RpcServer start... 
+[Debug] rpcServer.go 61 [2015-08-13 22:03:52] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server listening: <127.0.0.1:8888> 
+[Debug] rpcServer.go 67 [2015-08-13 22:03:56] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 22:03:56] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820bc138> 
+[Debug] rpcServer.go 67 [2015-08-13 22:03:56] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 160 [2015-08-13 22:03:56] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<UnbindUID> is invoked with sid<1> uid<Zhang San> 
+[Debug] rpcServer.go 67 [2015-08-13 22:03:56] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 22:03:56] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820bc750> 
+[Debug] rpcServer.go 67 [2015-08-13 22:03:56] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 178 [2015-08-13 22:03:56] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<PushOpt> is invoked with sid<1> key<age> value<12> 
+[Info] sessionService.go 296 [2015-08-13 22:03:56] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  Push opt with key<age> value<12> to session<1> 
+[Debug] rpcServer.go 67 [2015-08-13 22:03:56] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 22:03:56] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820bcda0> 
+[Debug] rpcServer.go 67 [2015-08-13 22:03:56] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 81 [2015-08-13 22:03:56] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionByUID> is invoked with uid<Li Si> 
+[Debug] rpcServer.go 67 [2015-08-13 22:04:02] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:04:12] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:04:22] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:04:32] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:04:42] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:04:52] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:05:02] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:05:12] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:05:22] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:05:32] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:05:42] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:05:52] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:06:02] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:06:12] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:06:22] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:06:32] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:06:42] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:06:52] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:07:02] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:07:12] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:07:22] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:07:32] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:07:42] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:07:52] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:08:02] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:08:12] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:08:22] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:08:32] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:08:42] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:08:52] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:09:02] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:09:12] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:09:22] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:09:32] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:09:42] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:09:52] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:10:02] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:10:12] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:10:22] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:10:32] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:10:42] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:10:52] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Info] sessionService.go 52 [2015-08-13 22:10:59] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  frontendserver<connector-1> create sessionservice with opts<map[multiBind:yes]> 
+[Trace] context.go 68 [2015-08-13 22:10:59] H:/pomelo-go/pomelo-go/src/context/context.go  Registe component <cosession> 
+[Info] cosession.go 34 [2015-08-13 22:10:59] H:/pomelo-go/pomelo-go/src/component/cosession/cosession.go  CoSession create successufully 
+[Trace] context.go 68 [2015-08-13 22:10:59] H:/pomelo-go/pomelo-go/src/context/context.go  Registe component <cosessionrpcserver> 
+[Trace] context.go 68 [2015-08-13 22:10:59] H:/pomelo-go/pomelo-go/src/context/context.go  Registe component <corpcserver> 
+[Info] corpcserver.go 27 [2015-08-13 22:10:59] H:/pomelo-go/pomelo-go/src/component/corpcserver/corpcserver.go  CoRpcServer create successfully 
+[Info] cosession.go 40 [2015-08-13 22:10:59] H:/pomelo-go/pomelo-go/src/component/cosession/cosession.go  frontendserver<connector-1> cosession start 
+[Info] sessionRpcServer.go 35 [2015-08-13 22:10:59] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  frontendserver<connector-1> SessionRpcServer start,registe service to rpc server 
+[Debug] sessionService.go 63 [2015-08-13 22:10:59] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<1> 
+[Debug] sessionService.go 63 [2015-08-13 22:10:59] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<2> 
+[Debug] sessionService.go 63 [2015-08-13 22:10:59] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<3> 
+[Debug] sessionService.go 63 [2015-08-13 22:10:59] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<4> 
+[Info] rpcServer.go 44 [2015-08-13 22:10:59] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  RpcServer start... 
+[Debug] rpcServer.go 61 [2015-08-13 22:10:59] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server listening: <127.0.0.1:8888> 
+[Debug] rpcServer.go 67 [2015-08-13 22:11:02] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:11:04] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 22:11:04] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820a4238> 
+[Debug] rpcServer.go 67 [2015-08-13 22:11:04] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 160 [2015-08-13 22:11:04] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<UnbindUID> is invoked with sid<1> uid<Zhang San> 
+[Debug] rpcServer.go 67 [2015-08-13 22:11:04] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 22:11:04] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820a4840> 
+[Debug] rpcServer.go 67 [2015-08-13 22:11:04] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 178 [2015-08-13 22:11:04] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<PushOpt> is invoked with sid<1> key<age> value<12> 
+[Info] sessionService.go 296 [2015-08-13 22:11:04] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  Push opt with key<age> value<12> to session<1> 
+[Debug] rpcServer.go 67 [2015-08-13 22:11:04] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 22:11:04] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820a4e90> 
+[Debug] rpcServer.go 67 [2015-08-13 22:11:04] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 81 [2015-08-13 22:11:04] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionByUID> is invoked with uid<Li Si> 
+[Debug] rpcServer.go 67 [2015-08-13 22:11:12] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:11:22] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:11:32] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:11:42] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:11:52] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:12:02] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:12:12] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:12:22] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:12:32] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:12:42] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:12:52] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:12:53] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 22:12:53] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820e4108> 
+[Debug] rpcServer.go 67 [2015-08-13 22:12:53] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 160 [2015-08-13 22:12:53] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<UnbindUID> is invoked with sid<1> uid<> 
+[Debug] rpcServer.go 67 [2015-08-13 22:12:53] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 22:12:53] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820e4640> 
+[Debug] rpcServer.go 67 [2015-08-13 22:12:53] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 178 [2015-08-13 22:12:53] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<PushOpt> is invoked with sid<1> key<age> value<12> 
+[Info] sessionService.go 296 [2015-08-13 22:12:53] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  Push opt with key<age> value<12> to session<1> 
+[Debug] rpcServer.go 67 [2015-08-13 22:12:53] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 22:12:53] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc082002b28> 
+[Debug] rpcServer.go 67 [2015-08-13 22:12:53] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 81 [2015-08-13 22:12:53] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionByUID> is invoked with uid<Li Si> 
+[Debug] rpcServer.go 67 [2015-08-13 22:13:02] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:13:12] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:13:22] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:13:32] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:13:42] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:13:52] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:14:02] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:14:12] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:14:22] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:14:32] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:14:42] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:14:52] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:15:02] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:15:12] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:15:22] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:15:32] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:15:42] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:15:52] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:16:02] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:16:12] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:16:22] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:16:32] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:16:42] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:16:52] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:17:02] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:17:12] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:17:22] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:17:32] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:17:42] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:17:52] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:18:02] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:18:12] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:18:22] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:18:32] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:18:42] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:18:52] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:19:02] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:19:12] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:19:22] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:19:32] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:19:42] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:19:52] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:20:02] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:20:12] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:20:22] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:20:32] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:20:42] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:20:52] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:21:02] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:21:12] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:21:22] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:21:32] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:21:42] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:21:52] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:22:00] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 22:22:00] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820a4680> 
+[Debug] rpcServer.go 67 [2015-08-13 22:22:00] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 160 [2015-08-13 22:22:00] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<UnbindUID> is invoked with sid<1> uid<> 
+[Debug] rpcServer.go 67 [2015-08-13 22:22:00] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 22:22:00] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820a4bc8> 
+[Debug] rpcServer.go 67 [2015-08-13 22:22:00] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 178 [2015-08-13 22:22:00] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<PushOpt> is invoked with sid<1> key<age> value<12> 
+[Info] sessionService.go 296 [2015-08-13 22:22:00] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  Push opt with key<age> value<12> to session<1> 
+[Debug] rpcServer.go 67 [2015-08-13 22:22:00] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 22:22:00] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820a52b8> 
+[Debug] rpcServer.go 67 [2015-08-13 22:22:00] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 81 [2015-08-13 22:22:00] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionByUID> is invoked with uid<Li Si> 
+[Debug] rpcServer.go 67 [2015-08-13 22:22:00] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 112 [2015-08-13 22:22:00] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<KickBySID> is invoked with sid<0> reason<no reason> 
+[Debug] rpcServer.go 67 [2015-08-13 22:22:00] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 22:22:00] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820a5ba0> 
+[Debug] rpcServer.go 67 [2015-08-13 22:22:02] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:22:12] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:22:22] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:22:28] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 22:22:28] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc082002f38> 
+[Debug] rpcServer.go 67 [2015-08-13 22:22:29] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 160 [2015-08-13 22:22:29] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<UnbindUID> is invoked with sid<1> uid<> 
+[Debug] rpcServer.go 67 [2015-08-13 22:22:29] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 22:22:29] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820035f0> 
+[Debug] rpcServer.go 67 [2015-08-13 22:22:29] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 178 [2015-08-13 22:22:29] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<PushOpt> is invoked with sid<1> key<age> value<12> 
+[Info] sessionService.go 296 [2015-08-13 22:22:29] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  Push opt with key<age> value<12> to session<1> 
+[Debug] rpcServer.go 67 [2015-08-13 22:22:29] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 22:22:29] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc082003c40> 
+[Debug] rpcServer.go 67 [2015-08-13 22:22:29] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 81 [2015-08-13 22:22:29] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionByUID> is invoked with uid<Li Si> 
+[Debug] rpcServer.go 67 [2015-08-13 22:22:29] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 112 [2015-08-13 22:22:29] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<KickBySID> is invoked with sid<0> reason<no reason> 
+[Debug] rpcServer.go 67 [2015-08-13 22:22:29] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 22:22:29] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820e4418> 
+[Debug] rpcServer.go 67 [2015-08-13 22:22:32] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:22:42] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:22:44] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 22:22:44] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820e4a48> 
+[Debug] rpcServer.go 67 [2015-08-13 22:22:44] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 160 [2015-08-13 22:22:44] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<UnbindUID> is invoked with sid<1> uid<> 
+[Debug] rpcServer.go 67 [2015-08-13 22:22:44] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 22:22:44] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820e4f70> 
+[Debug] rpcServer.go 67 [2015-08-13 22:22:44] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 178 [2015-08-13 22:22:44] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<PushOpt> is invoked with sid<1> key<age> value<12> 
+[Info] sessionService.go 296 [2015-08-13 22:22:44] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  Push opt with key<age> value<12> to session<1> 
+[Debug] rpcServer.go 67 [2015-08-13 22:22:44] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 22:22:44] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820e55b0> 
+[Debug] rpcServer.go 67 [2015-08-13 22:22:44] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 81 [2015-08-13 22:22:44] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionByUID> is invoked with uid<Li Si> 
+[Debug] rpcServer.go 67 [2015-08-13 22:22:44] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 112 [2015-08-13 22:22:44] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<KickBySID> is invoked with sid<0> reason<no reason> 
+[Debug] rpcServer.go 67 [2015-08-13 22:22:52] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:23:02] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:23:02] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 22:23:02] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc08207c078> 
+[Debug] rpcServer.go 67 [2015-08-13 22:23:12] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:23:22] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:23:32] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:23:42] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:23:52] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:24:02] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:24:12] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:24:22] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:24:32] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:24:42] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:24:52] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:25:02] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Info] sessionService.go 52 [2015-08-13 22:25:10] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  frontendserver<connector-1> create sessionservice with opts<map[multiBind:yes]> 
+[Trace] context.go 68 [2015-08-13 22:25:10] H:/pomelo-go/pomelo-go/src/context/context.go  Registe component <cosession> 
+[Info] cosession.go 34 [2015-08-13 22:25:10] H:/pomelo-go/pomelo-go/src/component/cosession/cosession.go  CoSession create successufully 
+[Trace] context.go 68 [2015-08-13 22:25:10] H:/pomelo-go/pomelo-go/src/context/context.go  Registe component <cosessionrpcserver> 
+[Trace] context.go 68 [2015-08-13 22:25:10] H:/pomelo-go/pomelo-go/src/context/context.go  Registe component <corpcserver> 
+[Info] corpcserver.go 27 [2015-08-13 22:25:10] H:/pomelo-go/pomelo-go/src/component/corpcserver/corpcserver.go  CoRpcServer create successfully 
+[Info] cosession.go 40 [2015-08-13 22:25:10] H:/pomelo-go/pomelo-go/src/component/cosession/cosession.go  frontendserver<connector-1> cosession start 
+[Info] sessionRpcServer.go 35 [2015-08-13 22:25:10] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  frontendserver<connector-1> SessionRpcServer start,registe service to rpc server 
+[Debug] sessionService.go 63 [2015-08-13 22:25:10] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<1> 
+[Debug] sessionService.go 63 [2015-08-13 22:25:10] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<2> 
+[Debug] sessionService.go 63 [2015-08-13 22:25:10] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<3> 
+[Debug] sessionService.go 63 [2015-08-13 22:25:10] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<4> 
+[Info] rpcServer.go 44 [2015-08-13 22:25:10] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  RpcServer start... 
+[Debug] rpcServer.go 61 [2015-08-13 22:25:10] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server listening: <127.0.0.1:8888> 
+[Debug] rpcServer.go 67 [2015-08-13 22:25:12] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:25:18] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 22:25:18] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820a4238> 
+[Debug] rpcServer.go 67 [2015-08-13 22:25:18] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 160 [2015-08-13 22:25:18] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<UnbindUID> is invoked with sid<1> uid<Zhang San> 
+[Debug] rpcServer.go 67 [2015-08-13 22:25:18] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 22:25:18] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820a4840> 
+[Debug] rpcServer.go 67 [2015-08-13 22:25:18] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 178 [2015-08-13 22:25:18] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<PushOpt> is invoked with sid<1> key<age> value<12> 
+[Info] sessionService.go 298 [2015-08-13 22:25:18] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  Push opt with key<age> value<12> to session<1> 
+[Debug] rpcServer.go 67 [2015-08-13 22:25:18] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 22:25:18] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820a4e80> 
+[Debug] rpcServer.go 67 [2015-08-13 22:25:18] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 81 [2015-08-13 22:25:18] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionByUID> is invoked with uid<Li Si> 
+[Debug] rpcServer.go 67 [2015-08-13 22:25:18] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 112 [2015-08-13 22:25:18] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<KickBySID> is invoked with sid<0> reason<no reason> 
+[Debug] rpcServer.go 67 [2015-08-13 22:25:22] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:25:23] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 22:25:23] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820a58b8> 
+[Debug] rpcServer.go 67 [2015-08-13 22:25:32] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:25:42] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:25:52] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:26:02] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:26:12] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:26:22] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:26:32] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:26:42] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:26:52] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:27:02] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:27:12] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:27:22] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:27:32] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Info] sessionService.go 52 [2015-08-13 22:27:45] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  frontendserver<connector-1> create sessionservice with opts<map[multiBind:yes]> 
+[Trace] context.go 68 [2015-08-13 22:27:45] H:/pomelo-go/pomelo-go/src/context/context.go  Registe component <cosession> 
+[Info] cosession.go 34 [2015-08-13 22:27:45] H:/pomelo-go/pomelo-go/src/component/cosession/cosession.go  CoSession create successufully 
+[Trace] context.go 68 [2015-08-13 22:27:45] H:/pomelo-go/pomelo-go/src/context/context.go  Registe component <cosessionrpcserver> 
+[Trace] context.go 68 [2015-08-13 22:27:45] H:/pomelo-go/pomelo-go/src/context/context.go  Registe component <corpcserver> 
+[Info] corpcserver.go 27 [2015-08-13 22:27:45] H:/pomelo-go/pomelo-go/src/component/corpcserver/corpcserver.go  CoRpcServer create successfully 
+[Info] cosession.go 40 [2015-08-13 22:27:45] H:/pomelo-go/pomelo-go/src/component/cosession/cosession.go  frontendserver<connector-1> cosession start 
+[Info] sessionRpcServer.go 35 [2015-08-13 22:27:45] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  frontendserver<connector-1> SessionRpcServer start,registe service to rpc server 
+[Debug] sessionService.go 63 [2015-08-13 22:27:45] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<1> 
+[Debug] sessionService.go 63 [2015-08-13 22:27:45] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<2> 
+[Debug] sessionService.go 63 [2015-08-13 22:27:45] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<3> 
+[Debug] sessionService.go 63 [2015-08-13 22:27:45] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<4> 
+[Info] rpcServer.go 44 [2015-08-13 22:27:45] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  RpcServer start... 
+[Debug] rpcServer.go 61 [2015-08-13 22:27:45] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server listening: <127.0.0.1:8888> 
+[Debug] rpcServer.go 67 [2015-08-13 22:27:53] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 22:27:53] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820a4138> 
+[Debug] rpcServer.go 67 [2015-08-13 22:27:53] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 160 [2015-08-13 22:27:53] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<UnbindUID> is invoked with sid<1> uid<Zhang San> 
+[Debug] rpcServer.go 67 [2015-08-13 22:27:53] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 22:27:53] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820a4740> 
+[Debug] rpcServer.go 67 [2015-08-13 22:27:53] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 178 [2015-08-13 22:27:53] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<PushOpt> is invoked with sid<1> key<age> value<12> 
+[Info] sessionService.go 299 [2015-08-13 22:27:53] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  Push opt with key<age> value<12> to session<1> 
+[Debug] rpcServer.go 67 [2015-08-13 22:27:53] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 22:27:53] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820a4d90> 
+[Debug] rpcServer.go 67 [2015-08-13 22:27:53] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 81 [2015-08-13 22:27:53] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionByUID> is invoked with uid<Li Si> 
+[Debug] rpcServer.go 67 [2015-08-13 22:27:53] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 112 [2015-08-13 22:27:53] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<KickBySID> is invoked with sid<0> reason<no reason> 
+[Debug] rpcServer.go 67 [2015-08-13 22:27:53] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 22:27:53] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820a56c8> 
+[Debug] rpcServer.go 67 [2015-08-13 22:27:53] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:28:03] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:28:13] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:28:23] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:28:33] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:28:43] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Info] sessionService.go 52 [2015-08-13 22:28:59] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  frontendserver<connector-1> create sessionservice with opts<map[multiBind:yes]> 
+[Trace] context.go 68 [2015-08-13 22:28:59] H:/pomelo-go/pomelo-go/src/context/context.go  Registe component <cosession> 
+[Info] cosession.go 34 [2015-08-13 22:28:59] H:/pomelo-go/pomelo-go/src/component/cosession/cosession.go  CoSession create successufully 
+[Trace] context.go 68 [2015-08-13 22:28:59] H:/pomelo-go/pomelo-go/src/context/context.go  Registe component <cosessionrpcserver> 
+[Trace] context.go 68 [2015-08-13 22:28:59] H:/pomelo-go/pomelo-go/src/context/context.go  Registe component <corpcserver> 
+[Info] corpcserver.go 27 [2015-08-13 22:28:59] H:/pomelo-go/pomelo-go/src/component/corpcserver/corpcserver.go  CoRpcServer create successfully 
+[Info] cosession.go 40 [2015-08-13 22:28:59] H:/pomelo-go/pomelo-go/src/component/cosession/cosession.go  frontendserver<connector-1> cosession start 
+[Info] sessionRpcServer.go 35 [2015-08-13 22:28:59] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  frontendserver<connector-1> SessionRpcServer start,registe service to rpc server 
+[Debug] sessionService.go 63 [2015-08-13 22:28:59] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<1> 
+[Debug] sessionService.go 63 [2015-08-13 22:28:59] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<2> 
+[Debug] sessionService.go 63 [2015-08-13 22:28:59] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<3> 
+[Debug] sessionService.go 63 [2015-08-13 22:28:59] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<4> 
+[Info] rpcServer.go 44 [2015-08-13 22:28:59] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  RpcServer start... 
+[Debug] rpcServer.go 61 [2015-08-13 22:28:59] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server listening: <127.0.0.1:8888> 
+[Debug] rpcServer.go 67 [2015-08-13 22:29:03] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 22:29:03] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820a8138> 
+[Debug] rpcServer.go 67 [2015-08-13 22:29:03] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 160 [2015-08-13 22:29:03] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<UnbindUID> is invoked with sid<1> uid<Zhang San> 
+[Debug] rpcServer.go 67 [2015-08-13 22:29:03] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 22:29:03] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820a8740> 
+[Debug] rpcServer.go 67 [2015-08-13 22:29:03] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 178 [2015-08-13 22:29:03] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<PushOpt> is invoked with sid<1> key<age> value<12> 
+[Info] sessionService.go 299 [2015-08-13 22:29:03] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  Push opt with key<age> value<12> to session<1> 
+[Debug] rpcServer.go 67 [2015-08-13 22:29:03] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 22:29:03] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820a8d80> 
+[Debug] rpcServer.go 67 [2015-08-13 22:29:03] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 81 [2015-08-13 22:29:03] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionByUID> is invoked with uid<Li Si> 
+[Debug] rpcServer.go 67 [2015-08-13 22:29:03] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 112 [2015-08-13 22:29:03] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<KickBySID> is invoked with sid<0> reason<no reason> 
+[Debug] rpcServer.go 67 [2015-08-13 22:29:03] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 22:29:03] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820a96a8> 
+[Debug] rpcServer.go 67 [2015-08-13 22:29:04] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:29:14] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:29:24] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:29:34] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:29:44] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Info] sessionService.go 52 [2015-08-13 22:29:50] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  frontendserver<connector-1> create sessionservice with opts<map[multiBind:yes]> 
+[Trace] context.go 68 [2015-08-13 22:29:50] H:/pomelo-go/pomelo-go/src/context/context.go  Registe component <cosession> 
+[Info] cosession.go 34 [2015-08-13 22:29:50] H:/pomelo-go/pomelo-go/src/component/cosession/cosession.go  CoSession create successufully 
+[Trace] context.go 68 [2015-08-13 22:29:50] H:/pomelo-go/pomelo-go/src/context/context.go  Registe component <cosessionrpcserver> 
+[Trace] context.go 68 [2015-08-13 22:29:50] H:/pomelo-go/pomelo-go/src/context/context.go  Registe component <corpcserver> 
+[Info] corpcserver.go 27 [2015-08-13 22:29:50] H:/pomelo-go/pomelo-go/src/component/corpcserver/corpcserver.go  CoRpcServer create successfully 
+[Info] cosession.go 40 [2015-08-13 22:29:50] H:/pomelo-go/pomelo-go/src/component/cosession/cosession.go  frontendserver<connector-1> cosession start 
+[Info] sessionRpcServer.go 35 [2015-08-13 22:29:50] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  frontendserver<connector-1> SessionRpcServer start,registe service to rpc server 
+[Debug] sessionService.go 63 [2015-08-13 22:29:50] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<1> 
+[Debug] sessionService.go 63 [2015-08-13 22:29:50] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<2> 
+[Debug] sessionService.go 63 [2015-08-13 22:29:50] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<3> 
+[Debug] sessionService.go 63 [2015-08-13 22:29:50] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<4> 
+[Info] rpcServer.go 44 [2015-08-13 22:29:50] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  RpcServer start... 
+[Debug] rpcServer.go 61 [2015-08-13 22:29:50] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server listening: <127.0.0.1:8888> 
+[Debug] rpcServer.go 67 [2015-08-13 22:29:54] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:29:55] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 22:29:55] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820bc238> 
+[Debug] rpcServer.go 67 [2015-08-13 22:29:55] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 160 [2015-08-13 22:29:55] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<UnbindUID> is invoked with sid<1> uid<Zhang San> 
+[Debug] rpcServer.go 67 [2015-08-13 22:29:55] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 22:29:55] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820bc840> 
+[Debug] rpcServer.go 67 [2015-08-13 22:29:55] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 178 [2015-08-13 22:29:55] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<PushOpt> is invoked with sid<1> key<age> value<12> 
+[Info] sessionService.go 299 [2015-08-13 22:29:55] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  Push opt with key<age> value<12> to session<1> 
+[Debug] rpcServer.go 67 [2015-08-13 22:29:55] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 22:29:55] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820bce90> 
+[Debug] rpcServer.go 67 [2015-08-13 22:29:55] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 81 [2015-08-13 22:29:55] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionByUID> is invoked with uid<Li Si> 
+[Debug] rpcServer.go 67 [2015-08-13 22:29:55] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 112 [2015-08-13 22:29:55] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<KickBySID> is invoked with sid<1> reason<no reason> 
+[Debug] rpcServer.go 67 [2015-08-13 22:29:55] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 22:29:55] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820bd7c0> 
+[Debug] rpcServer.go 67 [2015-08-13 22:30:04] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:30:13] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 22:30:13] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820bdae0> 
+[Debug] rpcServer.go 67 [2015-08-13 22:30:14] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:30:24] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:30:34] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:30:44] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:30:45] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 22:30:45] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820d2110> 
+[Debug] rpcServer.go 67 [2015-08-13 22:30:54] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:31:04] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:31:14] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:31:17] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 22:31:17] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820d2630> 
+[Debug] rpcServer.go 67 [2015-08-13 22:31:24] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:31:34] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:31:44] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:31:54] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Info] sessionService.go 52 [2015-08-13 22:32:02] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  frontendserver<connector-1> create sessionservice with opts<map[multiBind:yes]> 
+[Trace] context.go 68 [2015-08-13 22:32:02] H:/pomelo-go/pomelo-go/src/context/context.go  Registe component <cosession> 
+[Info] cosession.go 34 [2015-08-13 22:32:02] H:/pomelo-go/pomelo-go/src/component/cosession/cosession.go  CoSession create successufully 
+[Trace] context.go 68 [2015-08-13 22:32:02] H:/pomelo-go/pomelo-go/src/context/context.go  Registe component <cosessionrpcserver> 
+[Trace] context.go 68 [2015-08-13 22:32:02] H:/pomelo-go/pomelo-go/src/context/context.go  Registe component <corpcserver> 
+[Info] corpcserver.go 27 [2015-08-13 22:32:02] H:/pomelo-go/pomelo-go/src/component/corpcserver/corpcserver.go  CoRpcServer create successfully 
+[Info] cosession.go 40 [2015-08-13 22:32:02] H:/pomelo-go/pomelo-go/src/component/cosession/cosession.go  frontendserver<connector-1> cosession start 
+[Info] sessionRpcServer.go 35 [2015-08-13 22:32:02] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  frontendserver<connector-1> SessionRpcServer start,registe service to rpc server 
+[Debug] sessionService.go 63 [2015-08-13 22:32:02] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<1> 
+[Debug] sessionService.go 63 [2015-08-13 22:32:02] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<2> 
+[Debug] sessionService.go 63 [2015-08-13 22:32:02] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<3> 
+[Debug] sessionService.go 63 [2015-08-13 22:32:02] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<4> 
+[Info] rpcServer.go 44 [2015-08-13 22:32:02] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  RpcServer start... 
+[Debug] rpcServer.go 61 [2015-08-13 22:32:02] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server listening: <127.0.0.1:8888> 
+[Debug] rpcServer.go 67 [2015-08-13 22:32:04] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:32:06] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 22:32:06] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820a4228> 
+[Debug] rpcServer.go 67 [2015-08-13 22:32:06] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 160 [2015-08-13 22:32:06] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<UnbindUID> is invoked with sid<1> uid<Zhang San> 
+[Debug] rpcServer.go 67 [2015-08-13 22:32:06] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 22:32:06] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820a4840> 
+[Debug] rpcServer.go 67 [2015-08-13 22:32:06] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 178 [2015-08-13 22:32:06] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<PushOpt> is invoked with sid<1> key<age> value<12> 
+[Info] sessionService.go 299 [2015-08-13 22:32:06] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  Push opt with key<age> value<12> to session<1> 
+[Debug] rpcServer.go 67 [2015-08-13 22:32:06] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 22:32:06] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820a4e80> 
+[Debug] rpcServer.go 67 [2015-08-13 22:32:06] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 81 [2015-08-13 22:32:06] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionByUID> is invoked with uid<Li Si> 
+[Debug] rpcServer.go 67 [2015-08-13 22:32:06] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 112 [2015-08-13 22:32:06] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<KickBySID> is invoked with sid<1> reason<no reason> 
+[Debug] rpcServer.go 67 [2015-08-13 22:32:06] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 22:32:06] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820a57b0> 
+[Info] sessionService.go 52 [2015-08-13 22:32:14] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  frontendserver<connector-1> create sessionservice with opts<map[multiBind:yes]> 
+[Trace] context.go 68 [2015-08-13 22:32:14] H:/pomelo-go/pomelo-go/src/context/context.go  Registe component <cosession> 
+[Info] cosession.go 34 [2015-08-13 22:32:14] H:/pomelo-go/pomelo-go/src/component/cosession/cosession.go  CoSession create successufully 
+[Trace] context.go 68 [2015-08-13 22:32:14] H:/pomelo-go/pomelo-go/src/context/context.go  Registe component <cosessionrpcserver> 
+[Trace] context.go 68 [2015-08-13 22:32:14] H:/pomelo-go/pomelo-go/src/context/context.go  Registe component <corpcserver> 
+[Info] corpcserver.go 27 [2015-08-13 22:32:14] H:/pomelo-go/pomelo-go/src/component/corpcserver/corpcserver.go  CoRpcServer create successfully 
+[Info] cosession.go 40 [2015-08-13 22:32:14] H:/pomelo-go/pomelo-go/src/component/cosession/cosession.go  frontendserver<connector-1> cosession start 
+[Info] sessionRpcServer.go 35 [2015-08-13 22:32:14] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  frontendserver<connector-1> SessionRpcServer start,registe service to rpc server 
+[Debug] sessionService.go 63 [2015-08-13 22:32:14] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<1> 
+[Debug] sessionService.go 63 [2015-08-13 22:32:14] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<2> 
+[Debug] sessionService.go 63 [2015-08-13 22:32:14] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<3> 
+[Debug] sessionService.go 63 [2015-08-13 22:32:14] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<4> 
+[Info] rpcServer.go 44 [2015-08-13 22:32:14] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  RpcServer start... 
+[Debug] rpcServer.go 61 [2015-08-13 22:32:14] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server listening: <127.0.0.1:8888> 
+[Debug] rpcServer.go 67 [2015-08-13 22:32:14] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:32:22] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 22:32:22] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820bc238> 
+[Debug] rpcServer.go 67 [2015-08-13 22:32:22] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 160 [2015-08-13 22:32:22] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<UnbindUID> is invoked with sid<1> uid<Zhang San> 
+[Debug] rpcServer.go 67 [2015-08-13 22:32:22] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 22:32:22] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820bc850> 
+[Debug] rpcServer.go 67 [2015-08-13 22:32:22] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 178 [2015-08-13 22:32:22] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<PushOpt> is invoked with sid<1> key<age> value<12> 
+[Info] sessionService.go 299 [2015-08-13 22:32:22] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  Push opt with key<age> value<12> to session<1> 
+[Debug] rpcServer.go 67 [2015-08-13 22:32:22] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 22:32:22] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820bcea0> 
+[Debug] rpcServer.go 67 [2015-08-13 22:32:22] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 81 [2015-08-13 22:32:22] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionByUID> is invoked with uid<Li Si> 
+[Debug] rpcServer.go 67 [2015-08-13 22:32:22] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 112 [2015-08-13 22:32:22] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<KickBySID> is invoked with sid<1> reason<no reason> 
+[Debug] rpcServer.go 67 [2015-08-13 22:32:24] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:32:32] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 22:32:32] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820bd8f0> 
+[Debug] rpcServer.go 67 [2015-08-13 22:32:34] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:32:44] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:32:54] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:33:04] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:33:14] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:33:24] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Info] sessionService.go 52 [2015-08-13 22:33:41] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  frontendserver<connector-1> create sessionservice with opts<map[multiBind:yes]> 
+[Trace] context.go 68 [2015-08-13 22:33:41] H:/pomelo-go/pomelo-go/src/context/context.go  Registe component <cosession> 
+[Info] cosession.go 34 [2015-08-13 22:33:41] H:/pomelo-go/pomelo-go/src/component/cosession/cosession.go  CoSession create successufully 
+[Trace] context.go 68 [2015-08-13 22:33:41] H:/pomelo-go/pomelo-go/src/context/context.go  Registe component <cosessionrpcserver> 
+[Trace] context.go 68 [2015-08-13 22:33:41] H:/pomelo-go/pomelo-go/src/context/context.go  Registe component <corpcserver> 
+[Info] corpcserver.go 27 [2015-08-13 22:33:41] H:/pomelo-go/pomelo-go/src/component/corpcserver/corpcserver.go  CoRpcServer create successfully 
+[Info] cosession.go 40 [2015-08-13 22:33:41] H:/pomelo-go/pomelo-go/src/component/cosession/cosession.go  frontendserver<connector-1> cosession start 
+[Info] sessionRpcServer.go 35 [2015-08-13 22:33:41] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  frontendserver<connector-1> SessionRpcServer start,registe service to rpc server 
+[Debug] sessionService.go 63 [2015-08-13 22:33:41] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<1> 
+[Debug] sessionService.go 63 [2015-08-13 22:33:41] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<2> 
+[Debug] sessionService.go 63 [2015-08-13 22:33:41] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<3> 
+[Debug] sessionService.go 63 [2015-08-13 22:33:41] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<4> 
+[Info] rpcServer.go 44 [2015-08-13 22:33:41] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  RpcServer start... 
+[Debug] rpcServer.go 61 [2015-08-13 22:33:41] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server listening: <127.0.0.1:8888> 
+[Debug] rpcServer.go 67 [2015-08-13 22:33:45] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:33:55] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 22:33:55] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820a4248> 
+[Debug] rpcServer.go 67 [2015-08-13 22:33:55] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 160 [2015-08-13 22:33:55] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<UnbindUID> is invoked with sid<1> uid<Zhang San> 
+[Debug] rpcServer.go 67 [2015-08-13 22:33:55] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 22:33:55] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820a4850> 
+[Debug] rpcServer.go 67 [2015-08-13 22:33:55] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 178 [2015-08-13 22:33:55] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<PushOpt> is invoked with sid<1> key<age> value<12> 
+[Info] sessionService.go 299 [2015-08-13 22:33:55] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  Push opt with key<age> value<12> to session<1> 
+[Debug] rpcServer.go 67 [2015-08-13 22:33:55] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 22:33:55] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820a4e90> 
+[Debug] rpcServer.go 67 [2015-08-13 22:33:55] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 81 [2015-08-13 22:33:55] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionByUID> is invoked with uid<Li Si> 
+[Debug] rpcServer.go 67 [2015-08-13 22:33:55] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 112 [2015-08-13 22:33:55] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<KickBySID> is invoked with sid<1> reason<no reason> 
+[Debug] rpcServer.go 67 [2015-08-13 22:33:55] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 22:33:55] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820a57f0> 
+[Debug] rpcServer.go 67 [2015-08-13 22:33:55] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:34:05] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:34:15] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:34:25] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:34:35] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:34:45] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:34:55] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:35:05] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:35:15] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:35:25] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:35:35] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:35:45] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:35:55] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:36:05] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:36:15] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:36:25] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:36:35] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:36:45] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:36:55] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:37:05] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:37:15] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:37:25] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:37:35] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Info] sessionService.go 52 [2015-08-13 22:37:43] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  frontendserver<connector-1> create sessionservice with opts<map[multiBind:yes]> 
+[Trace] context.go 68 [2015-08-13 22:37:43] H:/pomelo-go/pomelo-go/src/context/context.go  Registe component <cosession> 
+[Info] cosession.go 34 [2015-08-13 22:37:43] H:/pomelo-go/pomelo-go/src/component/cosession/cosession.go  CoSession create successufully 
+[Trace] context.go 68 [2015-08-13 22:37:43] H:/pomelo-go/pomelo-go/src/context/context.go  Registe component <cosessionrpcserver> 
+[Trace] context.go 68 [2015-08-13 22:37:43] H:/pomelo-go/pomelo-go/src/context/context.go  Registe component <corpcserver> 
+[Info] corpcserver.go 27 [2015-08-13 22:37:43] H:/pomelo-go/pomelo-go/src/component/corpcserver/corpcserver.go  CoRpcServer create successfully 
+[Info] cosession.go 40 [2015-08-13 22:37:43] H:/pomelo-go/pomelo-go/src/component/cosession/cosession.go  frontendserver<connector-1> cosession start 
+[Info] sessionRpcServer.go 35 [2015-08-13 22:37:43] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  frontendserver<connector-1> SessionRpcServer start,registe service to rpc server 
+[Debug] sessionService.go 63 [2015-08-13 22:37:43] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<1> 
+[Debug] sessionService.go 63 [2015-08-13 22:37:43] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<2> 
+[Debug] sessionService.go 63 [2015-08-13 22:37:43] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<3> 
+[Debug] sessionService.go 63 [2015-08-13 22:37:43] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<4> 
+[Info] rpcServer.go 44 [2015-08-13 22:37:43] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  RpcServer start... 
+[Debug] rpcServer.go 61 [2015-08-13 22:37:43] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server listening: <127.0.0.1:8888> 
+[Debug] rpcServer.go 67 [2015-08-13 22:37:45] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:37:48] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 22:37:48] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820a4238> 
+[Debug] rpcServer.go 67 [2015-08-13 22:37:48] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 160 [2015-08-13 22:37:48] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<UnbindUID> is invoked with sid<1> uid<Zhang San> 
+[Debug] rpcServer.go 67 [2015-08-13 22:37:48] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 22:37:48] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820a4850> 
+[Debug] rpcServer.go 67 [2015-08-13 22:37:48] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 178 [2015-08-13 22:37:48] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<PushOpt> is invoked with sid<1> key<age> value<12> 
+[Info] sessionService.go 299 [2015-08-13 22:37:48] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  Push opt with key<age> value<12> to session<1> 
+[Debug] rpcServer.go 67 [2015-08-13 22:37:48] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 22:37:48] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820a4eb0> 
+[Debug] rpcServer.go 67 [2015-08-13 22:37:48] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 81 [2015-08-13 22:37:48] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionByUID> is invoked with uid<Li Si> 
+[Debug] rpcServer.go 67 [2015-08-13 22:37:48] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 112 [2015-08-13 22:37:48] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<KickBySID> is invoked with sid<1> reason<no reason> 
+[Debug] rpcServer.go 67 [2015-08-13 22:37:48] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 22:37:48] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820a57e0> 
+[Debug] rpcServer.go 67 [2015-08-13 22:37:55] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:38:05] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:38:15] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:38:25] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Info] sessionService.go 52 [2015-08-13 22:38:28] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  frontendserver<connector-1> create sessionservice with opts<map[multiBind:yes]> 
+[Trace] context.go 68 [2015-08-13 22:38:28] H:/pomelo-go/pomelo-go/src/context/context.go  Registe component <cosession> 
+[Info] cosession.go 34 [2015-08-13 22:38:28] H:/pomelo-go/pomelo-go/src/component/cosession/cosession.go  CoSession create successufully 
+[Trace] context.go 68 [2015-08-13 22:38:28] H:/pomelo-go/pomelo-go/src/context/context.go  Registe component <cosessionrpcserver> 
+[Trace] context.go 68 [2015-08-13 22:38:28] H:/pomelo-go/pomelo-go/src/context/context.go  Registe component <corpcserver> 
+[Info] corpcserver.go 27 [2015-08-13 22:38:28] H:/pomelo-go/pomelo-go/src/component/corpcserver/corpcserver.go  CoRpcServer create successfully 
+[Info] cosession.go 40 [2015-08-13 22:38:28] H:/pomelo-go/pomelo-go/src/component/cosession/cosession.go  frontendserver<connector-1> cosession start 
+[Info] sessionRpcServer.go 35 [2015-08-13 22:38:28] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  frontendserver<connector-1> SessionRpcServer start,registe service to rpc server 
+[Debug] sessionService.go 63 [2015-08-13 22:38:28] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<1> 
+[Debug] sessionService.go 63 [2015-08-13 22:38:28] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<2> 
+[Debug] sessionService.go 63 [2015-08-13 22:38:28] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<3> 
+[Debug] sessionService.go 63 [2015-08-13 22:38:28] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<4> 
+[Info] rpcServer.go 44 [2015-08-13 22:38:28] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  RpcServer start... 
+[Debug] rpcServer.go 61 [2015-08-13 22:38:28] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server listening: <127.0.0.1:8888> 
+[Debug] rpcServer.go 67 [2015-08-13 22:38:35] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Info] sessionService.go 52 [2015-08-13 22:38:41] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  frontendserver<connector-1> create sessionservice with opts<map[multiBind:yes]> 
+[Trace] context.go 68 [2015-08-13 22:38:41] H:/pomelo-go/pomelo-go/src/context/context.go  Registe component <cosession> 
+[Info] cosession.go 34 [2015-08-13 22:38:41] H:/pomelo-go/pomelo-go/src/component/cosession/cosession.go  CoSession create successufully 
+[Trace] context.go 68 [2015-08-13 22:38:41] H:/pomelo-go/pomelo-go/src/context/context.go  Registe component <cosessionrpcserver> 
+[Trace] context.go 68 [2015-08-13 22:38:41] H:/pomelo-go/pomelo-go/src/context/context.go  Registe component <corpcserver> 
+[Info] corpcserver.go 27 [2015-08-13 22:38:41] H:/pomelo-go/pomelo-go/src/component/corpcserver/corpcserver.go  CoRpcServer create successfully 
+[Info] cosession.go 40 [2015-08-13 22:38:41] H:/pomelo-go/pomelo-go/src/component/cosession/cosession.go  frontendserver<connector-1> cosession start 
+[Info] sessionRpcServer.go 35 [2015-08-13 22:38:41] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  frontendserver<connector-1> SessionRpcServer start,registe service to rpc server 
+[Debug] sessionService.go 63 [2015-08-13 22:38:41] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<1> 
+[Debug] sessionService.go 63 [2015-08-13 22:38:41] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<2> 
+[Debug] sessionService.go 63 [2015-08-13 22:38:41] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<3> 
+[Debug] sessionService.go 63 [2015-08-13 22:38:41] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<4> 
+[Info] rpcServer.go 44 [2015-08-13 22:38:41] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  RpcServer start... 
+[Debug] rpcServer.go 61 [2015-08-13 22:38:41] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server listening: <127.0.0.1:8888> 
+[Debug] rpcServer.go 67 [2015-08-13 22:38:45] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:38:54] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 22:38:54] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820a4238> 
+[Debug] rpcServer.go 67 [2015-08-13 22:38:54] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 160 [2015-08-13 22:38:54] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<UnbindUID> is invoked with sid<1> uid<Zhang San> 
+[Debug] rpcServer.go 67 [2015-08-13 22:38:54] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 22:38:54] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820a4840> 
+[Debug] rpcServer.go 67 [2015-08-13 22:38:54] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 178 [2015-08-13 22:38:54] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<PushOpt> is invoked with sid<1> key<age> value<12> 
+[Info] sessionService.go 299 [2015-08-13 22:38:54] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  Push opt with key<age> value<12> to session<1> 
+[Debug] rpcServer.go 67 [2015-08-13 22:38:54] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 22:38:54] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820a4e80> 
+[Debug] rpcServer.go 67 [2015-08-13 22:38:54] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 81 [2015-08-13 22:38:54] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionByUID> is invoked with uid<Li Si> 
+[Debug] rpcServer.go 67 [2015-08-13 22:38:54] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 112 [2015-08-13 22:38:54] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<KickBySID> is invoked with sid<1> reason<no reason> 
+[Debug] rpcServer.go 67 [2015-08-13 22:38:55] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:39:03] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 22:39:03] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820a58c0> 
+[Debug] rpcServer.go 67 [2015-08-13 22:39:05] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:39:15] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:39:25] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:39:35] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:39:45] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:39:55] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:40:05] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:40:15] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:40:25] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:40:35] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:40:45] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:40:55] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:41:05] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Info] sessionService.go 52 [2015-08-13 22:41:10] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  frontendserver<connector-1> create sessionservice with opts<map[multiBind:yes]> 
+[Trace] context.go 68 [2015-08-13 22:41:10] H:/pomelo-go/pomelo-go/src/context/context.go  Registe component <cosession> 
+[Info] cosession.go 34 [2015-08-13 22:41:10] H:/pomelo-go/pomelo-go/src/component/cosession/cosession.go  CoSession create successufully 
+[Trace] context.go 68 [2015-08-13 22:41:10] H:/pomelo-go/pomelo-go/src/context/context.go  Registe component <cosessionrpcserver> 
+[Trace] context.go 68 [2015-08-13 22:41:10] H:/pomelo-go/pomelo-go/src/context/context.go  Registe component <corpcserver> 
+[Info] corpcserver.go 27 [2015-08-13 22:41:10] H:/pomelo-go/pomelo-go/src/component/corpcserver/corpcserver.go  CoRpcServer create successfully 
+[Info] cosession.go 40 [2015-08-13 22:41:10] H:/pomelo-go/pomelo-go/src/component/cosession/cosession.go  frontendserver<connector-1> cosession start 
+[Info] sessionRpcServer.go 35 [2015-08-13 22:41:10] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  frontendserver<connector-1> SessionRpcServer start,registe service to rpc server 
+[Debug] sessionService.go 63 [2015-08-13 22:41:10] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<1> 
+[Debug] sessionService.go 63 [2015-08-13 22:41:10] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<2> 
+[Debug] sessionService.go 63 [2015-08-13 22:41:10] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<3> 
+[Debug] sessionService.go 63 [2015-08-13 22:41:10] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<4> 
+[Info] rpcServer.go 44 [2015-08-13 22:41:10] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  RpcServer start... 
+[Debug] rpcServer.go 61 [2015-08-13 22:41:10] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server listening: <127.0.0.1:8888> 
+[Debug] rpcServer.go 67 [2015-08-13 22:41:14] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 22:41:14] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820bc138> 
+[Debug] rpcServer.go 67 [2015-08-13 22:41:14] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 164 [2015-08-13 22:41:14] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<UnbindUID> is invoked with sid<1> uid<Zhang San> 
+[Debug] rpcServer.go 67 [2015-08-13 22:41:14] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 22:41:14] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820bc740> 
+[Debug] rpcServer.go 67 [2015-08-13 22:41:14] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 182 [2015-08-13 22:41:14] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<PushOpt> is invoked with sid<1> key<age> value<12> 
+[Info] sessionService.go 299 [2015-08-13 22:41:14] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  Push opt with key<age> value<12> to session<1> 
+[Debug] rpcServer.go 67 [2015-08-13 22:41:14] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 22:41:14] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820bcd80> 
+[Debug] rpcServer.go 67 [2015-08-13 22:41:14] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 85 [2015-08-13 22:41:14] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionByUID> is invoked with uid<Li Si> 
+[Debug] rpcServer.go 67 [2015-08-13 22:41:14] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 116 [2015-08-13 22:41:14] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<KickBySID> is invoked with sid<1> reason<no reason> 
+[Debug] rpcServer.go 67 [2015-08-13 22:41:14] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-13 22:41:14] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820bd6d0> 
+[Debug] rpcServer.go 67 [2015-08-13 22:41:15] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:41:25] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:41:35] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:41:45] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:41:55] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] rpcServer.go 67 [2015-08-13 22:42:05] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Info] sessionService.go 52 [2015-08-14 10:23:07] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  frontendserver<connector-1> create sessionservice with opts<map[multiBind:yes]> 
+[Trace] context.go 68 [2015-08-14 10:23:07] H:/pomelo-go/pomelo-go/src/context/context.go  Registe component <cosession> 
+[Info] cosession.go 34 [2015-08-14 10:23:07] H:/pomelo-go/pomelo-go/src/component/cosession/cosession.go  CoSession create successufully 
+[Trace] context.go 68 [2015-08-14 10:23:07] H:/pomelo-go/pomelo-go/src/context/context.go  Registe component <cosessionrpcserver> 
+[Trace] context.go 68 [2015-08-14 10:23:07] H:/pomelo-go/pomelo-go/src/context/context.go  Registe component <corpcserver> 
+[Info] corpcserver.go 27 [2015-08-14 10:23:07] H:/pomelo-go/pomelo-go/src/component/corpcserver/corpcserver.go  CoRpcServer create successfully 
+[Info] cosession.go 40 [2015-08-14 10:23:07] H:/pomelo-go/pomelo-go/src/component/cosession/cosession.go  frontendserver<connector-1> cosession start 
+[Info] sessionRpcServer.go 35 [2015-08-14 10:23:07] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  frontendserver<connector-1> SessionRpcServer start,registe service to rpc server 
+[Debug] sessionService.go 63 [2015-08-14 10:23:07] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<1> 
+[Debug] sessionService.go 63 [2015-08-14 10:23:07] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<2> 
+[Debug] sessionService.go 63 [2015-08-14 10:23:07] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<3> 
+[Debug] sessionService.go 63 [2015-08-14 10:23:07] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<4> 
+[Info] rpcServer.go 44 [2015-08-14 10:23:07] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  RpcServer start... 
+[Debug] rpcServer.go 61 [2015-08-14 10:23:07] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server listening: <127.0.0.1:8888> 
+[Debug] rpcServer.go 67 [2015-08-14 10:23:28] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-14 10:23:28] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820a4128> 
+[Debug] rpcServer.go 67 [2015-08-14 10:23:28] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 161 [2015-08-14 10:23:28] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<UnbindUID> is invoked with sid<1> uid<Zhang San> 
+[Debug] rpcServer.go 67 [2015-08-14 10:23:28] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-14 10:23:28] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820a4740> 
+[Debug] rpcServer.go 67 [2015-08-14 10:23:28] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 179 [2015-08-14 10:23:28] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<PushOpt> is invoked with sid<1> key<age> value<12> 
+[Info] sessionService.go 299 [2015-08-14 10:23:28] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  Push opt with key<age> value<12> to session<1> 
+[Debug] rpcServer.go 67 [2015-08-14 10:23:28] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-14 10:23:28] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820a4d90> 
+[Debug] rpcServer.go 67 [2015-08-14 10:23:28] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 82 [2015-08-14 10:23:28] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionByUID> is invoked with uid<Li Si> 
+[Debug] rpcServer.go 67 [2015-08-14 10:23:28] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 113 [2015-08-14 10:23:28] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<KickBySID> is invoked with sid<1> reason<no reason> 
+[Debug] rpcServer.go 67 [2015-08-14 10:23:35] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-14 10:23:35] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820a56d0> 
+[Info] sessionService.go 52 [2015-08-14 10:25:48] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  frontendserver<connector-1> create sessionservice with opts<map[multiBind:yes]> 
+[Trace] context.go 68 [2015-08-14 10:25:48] H:/pomelo-go/pomelo-go/src/context/context.go  Registe component <cosession> 
+[Info] cosession.go 34 [2015-08-14 10:25:48] H:/pomelo-go/pomelo-go/src/component/cosession/cosession.go  CoSession create successufully 
+[Trace] context.go 68 [2015-08-14 10:25:48] H:/pomelo-go/pomelo-go/src/context/context.go  Registe component <cosessionrpcserver> 
+[Trace] context.go 68 [2015-08-14 10:25:48] H:/pomelo-go/pomelo-go/src/context/context.go  Registe component <corpcserver> 
+[Info] corpcserver.go 27 [2015-08-14 10:25:48] H:/pomelo-go/pomelo-go/src/component/corpcserver/corpcserver.go  CoRpcServer create successfully 
+[Info] cosession.go 40 [2015-08-14 10:25:48] H:/pomelo-go/pomelo-go/src/component/cosession/cosession.go  frontendserver<connector-1> cosession start 
+[Info] sessionRpcServer.go 35 [2015-08-14 10:25:48] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  frontendserver<connector-1> SessionRpcServer start,registe service to rpc server 
+[Debug] sessionService.go 63 [2015-08-14 10:25:48] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<1> 
+[Debug] sessionService.go 63 [2015-08-14 10:25:48] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<2> 
+[Debug] sessionService.go 63 [2015-08-14 10:25:48] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<3> 
+[Debug] sessionService.go 63 [2015-08-14 10:25:48] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<4> 
+[Info] rpcServer.go 44 [2015-08-14 10:25:48] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  RpcServer start... 
+[Debug] rpcServer.go 61 [2015-08-14 10:25:48] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server listening: <127.0.0.1:8888> 
+[Debug] rpcServer.go 67 [2015-08-14 10:26:00] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-14 10:26:00] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc082003fb8> 
+[Debug] rpcServer.go 67 [2015-08-14 10:26:00] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 161 [2015-08-14 10:26:00] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<UnbindUID> is invoked with sid<1> uid<Zhang San> 
+[Debug] rpcServer.go 67 [2015-08-14 10:26:00] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-14 10:26:00] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc08209a5c0> 
+[Debug] rpcServer.go 67 [2015-08-14 10:26:00] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 179 [2015-08-14 10:26:00] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<PushOpt> is invoked with sid<1> key<age> value<12> 
+[Info] sessionService.go 299 [2015-08-14 10:26:00] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  Push opt with key<age> value<12> to session<1> 
+[Debug] rpcServer.go 67 [2015-08-14 10:26:00] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-14 10:26:00] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc08209ac00> 
+[Debug] rpcServer.go 67 [2015-08-14 10:26:00] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 82 [2015-08-14 10:26:00] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionByUID> is invoked with uid<Li Si> 
+[Debug] rpcServer.go 67 [2015-08-14 10:26:00] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 113 [2015-08-14 10:26:00] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<KickBySID> is invoked with sid<1> reason<no reason> 
+[Debug] rpcServer.go 67 [2015-08-14 10:26:04] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-14 10:26:04] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc08209b530> 
+[Info] sessionService.go 52 [2015-08-14 10:26:37] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  frontendserver<connector-1> create sessionservice with opts<map[multiBind:yes]> 
+[Trace] context.go 68 [2015-08-14 10:26:37] H:/pomelo-go/pomelo-go/src/context/context.go  Registe component <cosession> 
+[Info] cosession.go 34 [2015-08-14 10:26:37] H:/pomelo-go/pomelo-go/src/component/cosession/cosession.go  CoSession create successufully 
+[Trace] context.go 68 [2015-08-14 10:26:37] H:/pomelo-go/pomelo-go/src/context/context.go  Registe component <cosessionrpcserver> 
+[Trace] context.go 68 [2015-08-14 10:26:37] H:/pomelo-go/pomelo-go/src/context/context.go  Registe component <corpcserver> 
+[Info] corpcserver.go 27 [2015-08-14 10:26:37] H:/pomelo-go/pomelo-go/src/component/corpcserver/corpcserver.go  CoRpcServer create successfully 
+[Info] cosession.go 40 [2015-08-14 10:26:37] H:/pomelo-go/pomelo-go/src/component/cosession/cosession.go  frontendserver<connector-1> cosession start 
+[Info] sessionRpcServer.go 35 [2015-08-14 10:26:37] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  frontendserver<connector-1> SessionRpcServer start,registe service to rpc server 
+[Debug] sessionService.go 63 [2015-08-14 10:26:37] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<1> 
+[Debug] sessionService.go 63 [2015-08-14 10:26:37] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<2> 
+[Debug] sessionService.go 63 [2015-08-14 10:26:37] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<3> 
+[Debug] sessionService.go 63 [2015-08-14 10:26:37] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  <connector-1> CreateSession with sid<4> 
+[Info] rpcServer.go 44 [2015-08-14 10:26:37] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  RpcServer start... 
+[Debug] rpcServer.go 61 [2015-08-14 10:26:37] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server listening: <127.0.0.1:8888> 
+[Debug] rpcServer.go 67 [2015-08-14 10:26:47] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-14 10:26:47] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820a4128> 
+[Debug] rpcServer.go 67 [2015-08-14 10:26:47] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 160 [2015-08-14 10:26:47] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<UnbindUID> is invoked with sid<1> uid<Zhang San> 
+[Debug] rpcServer.go 67 [2015-08-14 10:26:47] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-14 10:26:47] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820a4730> 
+[Debug] rpcServer.go 67 [2015-08-14 10:26:47] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 178 [2015-08-14 10:26:47] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<PushOpt> is invoked with sid<1> key<age> value<12> 
+[Info] sessionService.go 299 [2015-08-14 10:26:47] H:/pomelo-go/pomelo-go/src/service/sessionService/sessionService.go  Push opt with key<age> value<12> to session<1> 
+[Debug] rpcServer.go 67 [2015-08-14 10:26:47] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-14 10:26:47] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820a4d70> 
+[Debug] rpcServer.go 67 [2015-08-14 10:26:47] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 81 [2015-08-14 10:26:47] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionByUID> is invoked with uid<Li Si> 
+[Debug] rpcServer.go 67 [2015-08-14 10:26:47] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 112 [2015-08-14 10:26:47] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<KickBySID> is invoked with sid<1> reason<no reason> 
+[Debug] rpcServer.go 67 [2015-08-14 10:26:51] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-14 10:26:51] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820a56b0> 
+[Debug] rpcServer.go 67 [2015-08-14 10:27:41] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-14 10:27:41] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820a5928> 
+[Debug] rpcServer.go 67 [2015-08-14 10:28:33] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-14 10:28:33] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820a5b98> 
+[Debug] rpcServer.go 67 [2015-08-14 10:29:30] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-14 10:29:30] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc082002b38> 
+[Debug] rpcServer.go 67 [2015-08-14 10:29:52] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-14 10:29:52] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc082003208> 
+[Debug] rpcServer.go 67 [2015-08-14 10:31:00] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-14 10:31:00] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc082002a00> 
+[Debug] rpcServer.go 67 [2015-08-14 10:31:04] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-14 10:31:04] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820030c0> 
+[Debug] rpcServer.go 67 [2015-08-14 10:31:11] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 81 [2015-08-14 10:31:11] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionByUID> is invoked with uid<Li Si> 
+[Debug] rpcServer.go 67 [2015-08-14 10:31:20] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 112 [2015-08-14 10:31:20] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<KickBySID> is invoked with sid<1> reason<no reason> 
+[Debug] rpcServer.go 67 [2015-08-14 10:31:23] H:/pomelo-go/pomelo-go/src/rpcserver/rpcServer.go  Rpc Server accept new connection 
+[Debug] sessionRpcServer.go 59 [2015-08-14 10:31:23] H:/pomelo-go/pomelo-go/src/remote_service/sessionRpcServer/sessionRpcServer.go  SessionRpcServer method<GetSessionBySID> is invoked with sid<0xc0820039a8> 

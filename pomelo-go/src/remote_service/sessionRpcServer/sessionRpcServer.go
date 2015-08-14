@@ -15,9 +15,11 @@ import (
 	"component/cosession"
 	"context"
 	"fmt"
+
 	seelog "github.com/cihub/seelog"
 )
 
+type NoReply int
 type SessionRpcServer struct {
 	sessionService *cosession.CoSession
 }
@@ -52,23 +54,21 @@ func NewSessionRpcServer() *SessionRpcServer {
 /// @param sid session id
 /// @param reply 返回给rpc调用端，name->value形式存放,存放信息包括,sid:session id, uid:用户id,frontendid:前端服务器id,opts:设置的属性
 /// @return nil
-func (srs *SessionRpcServer) GetSessionBySID(sid uint32, reply *map[string]interface{}) error {
+func (srs *SessionRpcServer) GetSessionBySID(sid *uint32, reply *map[string]interface{}) error {
 
-	fmt.Println("In GetSessionBySID")
-	fmt.Printf("SessionRpcServer method<GetSessionBySID> is invoked with sid<%v>\n", sid)
 	seelog.Debugf("SessionRpcServer method<GetSessionBySID> is invoked with sid<%v>", sid)
-	session := srs.sessionService.GetSessionByID(sid)
-	if (*reply) == nil {
-		fmt.Println("reply is nil")
-		return fmt.Errorf("reply error")
-	}
-	if session != nil && reply != nil {
-		(*reply)["sid"] = sid
-		(*reply)["uid"] = session.Uid
-		(*reply)["frontendid"] = session.FrontendID
-		(*reply)["opts"] = session.Opts
+	session := srs.sessionService.GetSessionByID(*sid)
+
+	rep := make(map[string]interface{})
+
+	if session != nil {
+		rep["sid"] = uint32(*sid)
+		rep["uid"] = session.Uid
+		rep["frontendid"] = session.FrontendID
+		rep["opts"] = session.Opts
+		*reply = rep
 	} else {
-		*reply = nil
+		*reply = rep
 	}
 	return nil
 }
@@ -81,7 +81,7 @@ func (srs *SessionRpcServer) GetSessionsByUID(uid string, reply *[]map[string]in
 	seelog.Debugf("SessionRpcServer method<GetSessionByUID> is invoked with uid<%v>", uid)
 
 	sessions := srs.sessionService.GetSessionsByUID(uid)
-
+	rep := make([]map[string]interface{}, 0)
 	if sessions != nil {
 		for _, elem := range sessions {
 
@@ -90,12 +90,12 @@ func (srs *SessionRpcServer) GetSessionsByUID(uid string, reply *[]map[string]in
 			s["uid"] = uid
 			s["frontendid"] = elem.FrontendID
 			s["opts"] = elem.Opts
-			*reply = append(*reply, s)
+			rep = append(rep, s)
 		}
+		*reply = rep
 	} else {
 		*reply = nil
 	}
-
 	return nil
 }
 
@@ -104,13 +104,13 @@ func (srs *SessionRpcServer) GetSessionsByUID(uid string, reply *[]map[string]in
 /// @param args args[0]表示sessionid{uint32} ，args[1]表示reason{string}
 /// @param reply 无实际意义参数，rpc客户端传来的nil
 /// @return nil
-func (srs *SessionRpcServer) KickBySID(args []interface{}, reply interface{}) error {
+func (srs *SessionRpcServer) KickBySID(args []interface{}, reply *NoReply) error {
 
-	sid, _ := args[0].(uint32)
+	sid, _ := args[0].(float64)
 	reason, _ := args[1].(string)
 
 	seelog.Debugf("SessionRpcServer method<KickBySID> is invoked with sid<%v> reason<%v>", sid, reason)
-	srs.sessionService.KickBySessionID(sid, reason)
+	srs.sessionService.KickBySessionID(uint32(sid), reason)
 
 	return nil
 }
@@ -119,7 +119,7 @@ func (srs *SessionRpcServer) KickBySID(args []interface{}, reply interface{}) er
 /// @param args args[0]{string}用户id, args[1]{string} reason
 /// @param reply nil
 /// @return nil
-func (srs *SessionRpcServer) KickByUID(args []string, reply interface{}) error {
+func (srs *SessionRpcServer) KickByUID(args []string, reply *NoReply) error {
 
 	uid := args[0]
 	reason := args[1]
@@ -136,14 +136,14 @@ func (srs *SessionRpcServer) KickByUID(args []string, reply interface{}) error {
 /// @param args arg[0]{uint32} sessionid, args[1]{string}用户id
 /// @param reply 当前rpc客户端传过来的nil
 /// @return nil
-func (srs *SessionRpcServer) BindUID(args []interface{}, reply interface{}) error {
+func (srs *SessionRpcServer) BindUID(args *[]interface{}, reply *NoReply) error {
 
-	sid, _ := args[0].(uint32)
-	uid, _ := args[1].(string)
+	sid, _ := (*args)[0].(float64)
+	uid, _ := (*args)[1].(string)
+	fmt.Printf("BindUID args:%v,sid:%v \n", *args, uint32(sid))
+	seelog.Debugf("SessionRpcServer method<BindUID> is invoked with sid<%v>, uid<%v>", sid, uid)
 
-	seelog.Debugf("SessionRpcServer method<BindUID> is invoked with sid<%v> uid<%v>", sid, uid)
-
-	srs.sessionService.BindUID(uid, sid)
+	srs.sessionService.BindUID(uid, uint32(sid))
 
 	return nil
 }
@@ -153,13 +153,13 @@ func (srs *SessionRpcServer) BindUID(args []interface{}, reply interface{}) erro
 /// @param args args[0]{uint32} sessionid, args[1] {string} 用户id
 /// @param reply 当前rpc客户端传过来为nil
 /// @return nil
-func (srs *SessionRpcServer) UnbindUID(args []interface{}, reply interface{}) error {
-	sid, _ := args[0].(uint32)
-	uid, _ := args[1].(string)
+func (srs *SessionRpcServer) UnbindUID(args *[]interface{}, reply *NoReply) error {
+	sid, _ := (*args)[0].(float64)
+	uid, _ := (*args)[1].(string)
 
 	seelog.Debugf("SessionRpcServer method<UnbindUID> is invoked with sid<%v> uid<%v>", sid, uid)
 
-	srs.sessionService.UnbindUID(uid, sid)
+	srs.sessionService.UnbindUID(uid, uint32(sid))
 
 	return nil
 }
@@ -169,15 +169,15 @@ func (srs *SessionRpcServer) UnbindUID(args []interface{}, reply interface{}) er
 /// @param args args["sid"]{uint32}session id， args["key"]属性名，args["value"]{interface{}}属性值
 /// @param reply rpc客户端传递多来为nil
 /// @return nil
-func (srs *SessionRpcServer) PushOpt(args map[string]interface{}, reply interface{}) error {
+func (srs *SessionRpcServer) PushOpt(args *map[string]interface{}, reply *NoReply) error {
 
-	sid, _ := args["sid"].(uint32)
-	key, _ := args["key"].(string)
-	value, _ := args["value"]
+	sid, _ := (*args)["sid"].(float64)
+	key, _ := (*args)["key"].(string)
+	value, _ := (*args)["value"]
 
 	seelog.Debugf("SessionRpcServer method<PushOpt> is invoked with sid<%v> key<%v> value<%v>", sid, key, value)
 
-	srs.sessionService.PushOpt(sid, key, value)
+	srs.sessionService.PushOpt(uint32(sid), key, value)
 
 	return nil
 }
@@ -187,14 +187,14 @@ func (srs *SessionRpcServer) PushOpt(args map[string]interface{}, reply interfac
 /// @param args["sid"]{uint32} sessionid，args["setting"] {map[string]interface{}}多个属性的key->value映射.
 /// @param reply rpc客户端传递过来为nil
 /// @return nil
-func (srs *SessionRpcServer) PushAllOpts(args map[string]interface{}, reply interface{}) error {
+func (srs *SessionRpcServer) PushAllOpts(args *map[string]interface{}, reply *NoReply) error {
 
-	sid, _ := args["sid"].(uint32)
-	opts, _ := args["settings"].(map[string]interface{})
+	sid, _ := (*args)["sid"].(float64)
+	opts, _ := (*args)["settings"].(map[string]interface{})
 
 	seelog.Debugf("SessionRpcServer method<PushAllOpt> is invoked with sid<%v>", sid)
 
-	srs.sessionService.PushAllOpts(sid, opts)
+	srs.sessionService.PushAllOpts(uint32(sid), opts)
 
 	return nil
 }

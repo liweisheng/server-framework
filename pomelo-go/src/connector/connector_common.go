@@ -10,11 +10,11 @@ const (
 type Socket interface {
 	ID() uint32
 	Socket() interface{}
-	RemoteAddress() map[string]string
+	RemoteAddress() map[string]interface{}
 	Send([]byte) (int, error)
 	SendBatch(...[]byte)
 	Receive([]byte) (int, error)
-	Disconnect() int
+	Disconnect()
 }
 
 type Connector interface {

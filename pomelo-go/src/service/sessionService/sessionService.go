@@ -13,11 +13,11 @@ package sessionService
 
 import (
 	"connector"
+	"context"
 	"fmt"
 	seelog "github.com/cihub/seelog"
 	"os"
 	"sync"
-	// "context"
 )
 
 ///session状态
@@ -49,6 +49,7 @@ func NewSessionService(opts map[string]interface{}) *SessionService {
 	multibind := opts["multiBind"] != nil && (opts["multiBind"].(string) != "")
 	rwMutexS := new(sync.RWMutex)
 	rwMutexUM := new(sync.RWMutex)
+	seelog.Infof("frontendserver<%v> create sessionservice with opts<%v>", context.GetContext().GetServerID(), opts)
 	return &SessionService{sessions, uidmap, multibind, opts, rwMutexS, rwMutexUM}
 }
 
@@ -87,7 +88,7 @@ func (ss *SessionService) BindUID(uid string, sid uint32) error {
 			seelog.Infof("frontendserver<%v>  sid<%v> has already binded with uid<%v>", session.FrontendID, sid, uid)
 			return nil
 		} else {
-			seelog.Errorf("frontendserver<%v> session with sid<%v> has already bound with uid<%v>", session.FrontendID, sid, uid)
+			seelog.Errorf("frontendserver<%v> session with sid<%v> has already bound with uid<%v>", session.FrontendID, sid, session.Uid)
 			return fmt.Errorf("Error: session with sid<%v> has already bound with uid<%v>\n", sid, uid)
 		}
 	}
@@ -103,7 +104,7 @@ func (ss *SessionService) BindUID(uid string, sid uint32) error {
 	}
 
 	for _, elem := range sessions {
-		if elem.Uid == uid {
+		if elem.Id == sid {
 			//已经有session绑定uid
 			return nil
 		}
@@ -262,10 +263,13 @@ func (ss *SessionService) KickBySessionID(sid uint32, reason string) {
 	ss.rwMutexS.RLock()
 	session, ok := ss.sessions[sid]
 	ss.rwMutexS.RUnlock()
-
+	fmt.Printf("KickBySessionID Invoked with sid<%v>\n", sid)
 	if ok {
 		session.close(reason)
+
+		ss.RemoveSessionByID(sid)
 	}
+
 }
 
 /// 通过session id获得客户端的地址信息.
@@ -273,7 +277,7 @@ func (ss *SessionService) KickBySessionID(sid uint32, reason string) {
 /// @param sid session id
 /// @return 返回地址信息或者nil.在成功返回的情况下，返回值的格式为name:value形式
 ///  如host:127.0.0.1 port:10000.
-func (ss *SessionService) GetClientAddrBySID(sid uint32) map[string]string {
+func (ss *SessionService) GetClientAddrBySID(sid uint32) map[string]interface{} {
 	ss.rwMutexS.RLock()
 	session, ok := ss.sessions[sid]
 	ss.rwMutexS.RUnlock()
@@ -442,6 +446,9 @@ func (s *Session) close(reason string) {
 
 	s.Status = SS_CLOSED
 	// s.socket.RemoteAddress()
+	if s.Socket == nil {
+		return
+	}
 	s.Socket.Disconnect()
 }
 

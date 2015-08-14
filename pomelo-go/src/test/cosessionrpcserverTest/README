@@ -10,4 +10,8 @@ cobackendsession组件封装backendSessionService的操作，cosessionrpcserver�
 而cobackendsession则由后端服务器加载,内部通过发起rpc调用请求cosessionrpcserver
 服务。
 
+运行:
+server目录下对应服务器端，先编译运行server
+client目录下对应客户端，client在server启动后运行
+
 

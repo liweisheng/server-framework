@@ -21,6 +21,7 @@ import (
 	"context"
 	seelog "github.com/cihub/seelog"
 	"service/sessionService"
+	"strconv"
 	"strings"
 )
 
@@ -110,7 +111,7 @@ func (cocnct *CoConnector) ConnectionEventCB(sock connector.Socket) *sessionServ
 }
 
 /// 回调函数，当连接上有新的message到来时调用该回调函数,该回调函数注册给connector使用.
-func (cocnct *CoConnector) MessageEventCB(session *sessionService.Session, msg map[string]interface{}) {
+func (cocnct *CoConnector) MessageEventCB(sid uint32, msg map[string]interface{}) {
 	route, _ := msg["route"].(string)
 	if cocnct.checkRouteValidity(route) == false {
 		seelog.Errorf("<%v> invalid route<%v>", cocnct.ctx.GetServerID(), route)
@@ -120,7 +121,7 @@ func (cocnct *CoConnector) MessageEventCB(session *sessionService.Session, msg m
 
 /// 检查路由的合法性，路由格式是:serverType.handler.method
 ///
-/// 考虑请求聊天服务器chatServer新用户登录，则route格式为chatServer.UserManager.
+/// 如考虑请求聊天服务器chatServer新用户登录，则route格式为chatServer.UserManager.
 func (cocnct *CoConnector) checkRouteValidity(route string) bool {
 	return strings.Index(route, ".") != -1
 }
@@ -146,6 +147,6 @@ func getConnector(ctx *context.Context) connector.Connector {
 
 	curServer := ctx.CurrentServer
 	host, _ := curServer["host"].(string)
-	port, _ := curServer["port"].(string)
+	port := strconv.Itoa(curServer["port"].(int))
 	return tcp_connector.NewTcpConnector(host, port, nil)
 }
